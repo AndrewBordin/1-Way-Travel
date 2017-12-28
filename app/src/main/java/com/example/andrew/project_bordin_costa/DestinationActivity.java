@@ -2,9 +2,9 @@ package com.example.andrew.project_bordin_costa;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.example.andrew.project_bordin_costa.model.Destination;
 
@@ -14,6 +14,9 @@ public class DestinationActivity extends Activity {
 
     ArrayList<Destination> destinationArrayList;
     Button btnDatePicker;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +33,13 @@ public class DestinationActivity extends Activity {
 
             int arrayPosition = intent.getIntExtra("arrayPosition", 0);
 
-            btnDatePicker.setText("\n\n\n\n\n" + destinationArrayList.get(arrayPosition).getCityName() + ": Pick a Travel Date");
+            String cityname = destinationArrayList.get(arrayPosition).getCityName();
+
+            btnDatePicker.setText(cityname + ": Pick a Travel Date");
+
+            btnDatePicker.setBackgroundResource(destinationArrayList.get(arrayPosition).getCityPicture());
+
+
 
         }
     }

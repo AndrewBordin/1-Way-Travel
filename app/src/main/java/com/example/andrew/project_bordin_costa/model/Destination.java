@@ -1,5 +1,9 @@
 package com.example.andrew.project_bordin_costa.model;
 
+import android.graphics.drawable.Drawable;
+
+import com.example.andrew.project_bordin_costa.R;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -11,20 +15,25 @@ public class Destination implements Serializable {
 
     private String CityName;
 
-    public Destination(String cityName){
+    private int CityPicture;
+
+    public Destination(String cityName, int cityPicture){
+        this.CityPicture = cityPicture;
         this.CityName = cityName;
     }
 
     public String getCityName(){return CityName;}
 
+    public int getCityPicture(){return CityPicture;}
+
     public static ArrayList<Destination> getDestination(){
 
         ArrayList<Destination> destinations = new ArrayList<>();
 
-        destinations.add(new Destination("Toronto"));
-        destinations.add(new Destination("London"));
-        destinations.add(new Destination("San Fransisco"));
-        destinations.add(new Destination("Sydney"));
+        destinations.add(new Destination("Toronto", R.drawable.toronto2));
+        destinations.add(new Destination("London", R.drawable.london2));
+        destinations.add(new Destination("San Fransisco", R.drawable.sanfran2));
+        destinations.add(new Destination("Sydney", R.drawable.sydney2));
 
         return destinations;
     }
