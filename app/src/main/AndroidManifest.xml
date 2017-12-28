@@ -16,7 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DestinationActivity"></activity>
+        <activity android:name=".DestinationActivity" />
+        <activity android:name=".RestaurantActivity" />
+        <activity android:name=".ThingsToDoActivity" />
+        <activity android:name=".EmergencyActivity" />
+        <activity android:name=".MapActivity"></activity>
     </application>
 
 </manifest>
