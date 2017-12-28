@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#81C784"
     tools:context="com.example.andrew.project_bordin_costa.DestinationActivity">
 
     <Button
@@ -23,45 +24,53 @@
 
     <Button
         android:id="@+id/btnEmergency"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="190dp"
+        android:layout_height="190dp"
         android:layout_marginBottom="12dp"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="4dp"
-        android:text="Transit and Emergency Info"
+        android:background="@drawable/emergency"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnRestaurants" />
 
     <Button
         android:id="@+id/btnMap"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="190dp"
+        android:layout_height="190dp"
         android:layout_marginBottom="12dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
-        android:text="Map"
+        android:background="@drawable/map"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnThingstodo" />
 
     <Button
         android:id="@+id/btnThingstodo"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="190dp"
+        android:layout_height="190dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
+        android:background="@drawable/thingstodo"
         android:text="Things to do"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnDateButton" />
 
     <Button
         android:id="@+id/btnRestaurants"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="190dp"
+        android:layout_height="190dp"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="12dp"
+        android:background="@drawable/restaurant"
         android:text="Restaurants"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnDateButton" />
 
