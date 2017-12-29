@@ -54,7 +54,7 @@ public class DestinationActivity extends Activity implements View.OnClickListene
 
             String cityname = destinationArrayList.get(arrayPosition).getCityName();
 
-            btnDatePicker.setText(cityname + ": Pick a Travel Date");
+            btnDatePicker.setText(getResources().getString(R.string.pick_a_date_msg, cityname));
 
             btnDatePicker.setBackgroundResource(destinationArrayList.get(arrayPosition).getCityPicture());
         }

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">project_bordin_costa</string>
+    <string name="pick_a_date_msg">%1$s: Pick a Travel Date.</string>
 </resources>
