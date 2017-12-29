@@ -39,7 +39,6 @@ public class MainActivity extends Activity implements View.OnClickListener{
         btnSydney.setOnClickListener(this);
 
         destinations = Destination.getDestination();
-
     }
 
     @Override
