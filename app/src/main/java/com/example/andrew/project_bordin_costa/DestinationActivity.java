@@ -67,29 +67,29 @@ public class DestinationActivity extends Activity implements View.OnClickListene
             case R.id.btnThingstodo:
                 //code
                 intent = new Intent(getApplicationContext(),ThingsToDoActivity.class);
-                startActivityForResult(intent, THINGS_TO_DO_ACTIVITY);
                 intent.putExtra("arrayPosition", arrayPosition);
+                startActivityForResult(intent, THINGS_TO_DO_ACTIVITY);
                 break;
 
             case R.id.btnRestaurants:
                 //code
                 intent = new Intent(getApplicationContext(),RestaurantActivity.class);
-                startActivityForResult(intent, RESTAURANT_ACTIVITY);
                 intent.putExtra("arrayPosition", arrayPosition);
+                startActivityForResult(intent, RESTAURANT_ACTIVITY);
                 break;
 
             case R.id.btnMap:
                 //code
                 intent = new Intent(getApplicationContext(),MapActivity.class);
-                startActivityForResult(intent, MAP_ACTIVITY);
                 intent.putExtra("arrayPosition", arrayPosition);
+                startActivityForResult(intent, MAP_ACTIVITY);
                 break;
 
             case R.id.btnEmergency:
                 //code
                 intent = new Intent(getApplicationContext(),EmergencyActivity.class);
-                startActivityForResult(intent, EMERGENCY_ACTIVITY);
                 intent.putExtra("arrayPosition", arrayPosition);
+                startActivityForResult(intent, EMERGENCY_ACTIVITY);
                 break;
         }
     }
