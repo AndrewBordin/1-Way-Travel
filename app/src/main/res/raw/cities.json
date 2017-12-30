@@ -26,8 +26,8 @@
 					"food-type": "Italian",
 					"address": "73 King St E, Toronto, ON M5C 1G3, Canada",
 					"website": "http://www.carismarestaurant.com/",
-					"review-by": "The Toronto Star",
-					"review": "Impeccable, hands-on service, as warm as a goose-down duvet.",
+					"review-by": "—The Toronto Star",
+					"review": "\"Impeccable, hands-on service, as warm as a goose-down duvet.\"",
 					"stars": "4.5"
 				},
 				{
@@ -35,8 +35,8 @@
 					"food-type": "French",
 					"address": "163 Spadina Ave, Toronto, ON M5V 2L6, Canada",
 					"website": "http://alorestaurant.com/",
-					"review-by": "Bon Appetit",
-					"review": "Toronto's best restaurant and bar under one roof",
+					"review-by": "—Bon Appetit",
+					"review": "\"Toronto's best restaurant and bar under one roof\"",
 					"stars": "4.6"
 				}
 			],
@@ -75,8 +75,8 @@
 					"food-type": "British",
 					"address": "127 Ledbury Rd, London W11 2AQ, UK",
 					"website": "http://www.theledbury.com/",
-					"review-by": "Telegraph UK",
-					"review": "Not only is The Ledbury the 14th best restaurant in the world, it has been voted the UK's best restaurant more than half a dozen times and holds two Michelin stars.",
+					"review-by": "—Telegraph UK",
+					"review": "\"Not only is The Ledbury the 14th best restaurant in the world, it has been voted the UK's best restaurant more than half a dozen times and holds two Michelin stars.\"",
 					"stars": "4.6"
 				},
 				{
@@ -84,8 +84,8 @@
 					"food-type": "Moroccan",
 					"address": "108 Mitcham Rd, London SW17 9NG, UK",
 					"website": "http://tangia.co.uk/",
-					"review-by": "Trip Advisor User",
-					"review": " Love the ambience of the place. Reminds me of my holiday in Morocco.",
+					"review-by": "—Trip Advisor User",
+					"review": "\"Love the ambience of the place. Reminds me of my holiday in Morocco.\"",
 					"stars": "4.7"
 				}
 			],
@@ -123,8 +123,8 @@
 					"food-type": "Mexican",
 					"address": "2889 Mission St, San Francisco, CA 94110, USA",
 					"website": "http://www.taqueriasanfrancisco.com/",
-					"review-by": "Bon Appetit",
-					"review": "One of the best Mission-style burrito joints.",
+					"review-by": "—Bon Appetit",
+					"review": "\"One of the best Mission-style burrito joints.\"",
 					"stars": "4.5"
 				},
 				{
@@ -132,8 +132,8 @@
 					"food-type": "American",
 					"address": "800 North Point St, San Francisco, CA 94109, USA",
 					"website": "http://garydanko.com/",
-					"review-by": "Zagat",
-					"review": "An oasis of excellence that never loses its luster",
+					"review-by": "—Zagat",
+					"review": "\"An oasis of excellence that never loses its luster\"",
 					"stars": "4.5"
 				}
 			],
@@ -172,8 +172,8 @@
 					"food-type": "Malaysian",
 					"address": "15 Goulburn St, Sydney NSW 2000, Australia",
 					"website": "https://mamak.com.au/",
-					"review-by": "The Food Pornographer",
-					"review": "A big thumbs up for Mamak. I can understand why it's so popular and enthusiastically recommended by Sydneysiders. The food is quite cheap and utterly delicious.",
+					"review-by": "—The Food Pornographer",
+					"review": "\"A big thumbs up for Mamak. I can understand why it's so popular and enthusiastically recommended by Sydneysiders. The food is quite cheap and utterly delicious.\"",
 					"stars": "4.1"
 				},
 				{
@@ -181,8 +181,8 @@
 					"food-type": "Chinese",
 					"address": "3 Bridge St, Sydney NSW 2000, Australia",
 					"website": "https://merivale.com.au/mrwong",
-					"review-by": "Gourmet Traveller",
-					"review": "The real pleasure at Mr Wong is in seeing familiar dishes done right, elevated to levels seldom seen in Australia.",
+					"review-by": "—Gourmet Traveller",
+					"review": "\"The real pleasure at Mr Wong is in seeing familiar dishes done right, elevated to levels seldom seen in Australia.\"",
 					"stars": "4.2"
 				}
 			],

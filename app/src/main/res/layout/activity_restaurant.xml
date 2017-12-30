@@ -38,6 +38,105 @@
             app:layout_constraintTop_toBottomOf="@+id/txt_restaurant_title"
             tools:text="Name of Restaurant" />
 
+        <ImageView
+            android:id="@+id/img_restaurant1"
+            android:layout_width="wrap_content"
+            android:layout_height="137dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/toronto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_restaurant1" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#B3E5FC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_restaurant1">
+
+            <TextView
+                android:id="@+id/txt_foodType1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="8dp"
+                android:text="Food type"
+                android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_address1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="8dp"
+                android:text="Address"
+                android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_foodType1" />
+
+            <TextView
+                android:id="@+id/txt_stars1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingLeft="8dp"
+                android:text="Stars"
+                android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_address1" />
+
+            <TextView
+                android:id="@+id/txt_review1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="2dp"
+                android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_stars1"
+                tools:text="Review of restaurant" />
+
+            <TextView
+                android:id="@+id/txt_reviewBy1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_review1"
+                tools:text="Owner of review" />
+
+            <Button
+                android:id="@+id/btnWebsite1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/darker_gray"
+                android:text="Go to website"
+                android:textColor="@android:color/background_light"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.501"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_reviewBy1" />
+        </android.support.constraint.ConstraintLayout>
+
         <TextView
             android:id="@+id/txt_restaurant2"
             android:layout_width="0dp"
@@ -48,7 +147,7 @@
             android:textAppearance="@android:style/TextAppearance.Holo.Large"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_info_r1"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
             tools:text="Name of Restaurant" />
 
         <ImageView
@@ -64,42 +163,91 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_restaurant2" />
 
-        <ImageView
-            android:id="@+id/img_restaurant1"
-            android:layout_width="wrap_content"
-            android:layout_height="137dp"
-            android:layout_marginTop="8dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/toronto"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_restaurant1" />
-
-        <TextView
-            android:id="@+id/txt_info_r1"
-            android:layout_width="0dp"
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraintLayout3"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#B3E5FC"
-            android:paddingLeft="8dp"
-            android:text="Info about it"
-            android:textAppearance="@android:style/TextAppearance.Holo.Medium"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/img_restaurant1" />
-
-        <TextView
-            android:id="@+id/txt_info_r2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="#B3E5FC"
-            android:paddingLeft="8dp"
-            android:text="Info about it"
-            android:textAppearance="@android:style/TextAppearance.Holo.Medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/img_restaurant2" />
+            app:layout_constraintTop_toBottomOf="@+id/img_restaurant2">
 
+            <TextView
+                android:id="@+id/txt_foodType2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="8dp"
+                android:text="Food type"
+                android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_address2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="8dp"
+                android:text="Address"
+                android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_foodType2" />
+
+            <TextView
+                android:id="@+id/txt_stars2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingLeft="8dp"
+                android:text="Stars"
+                android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_address2" />
+
+            <TextView
+                android:id="@+id/txt_review2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="2dp"
+                android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_stars2"
+                tools:text="Review of restaurant" />
+
+            <TextView
+                android:id="@+id/txt_reviewBy2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_review2"
+                tools:text="Owner of review" />
+
+            <Button
+                android:id="@+id/btnWebsite2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/darker_gray"
+                android:text="Go to website"
+                android:textColor="@android:color/background_light"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.501"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_reviewBy2" />
+        </android.support.constraint.ConstraintLayout>
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
