@@ -24,16 +24,21 @@ public class ThingsToDoActivity extends Activity {
 
     TextView txtName1;
     TextView txtName2;
+    TextView txtName3;
     TextView txtInfo1;
     TextView txtInfo2;
+    TextView txtInfo3;
 
     String name1;
     String name2;
+    String name3;
     String info1;
     String info2;
+    String info3;
 
     final int THING_TO_DO_1 = 0;
     final int THING_TO_DO_2 = 1;
+    final int THING_TO_DO_3 = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,13 +47,17 @@ public class ThingsToDoActivity extends Activity {
 
         txtName1 = findViewById(R.id.txt_name1);
         txtName2 = findViewById(R.id.txt_name2);
+        txtName3 = findViewById(R.id.txt_name3);
         txtInfo1 = findViewById(R.id.txt_info1);
         txtInfo2 = findViewById(R.id.txt_info2);
+        txtInfo3 = findViewById(R.id.txt_info3);
 
         name1 = "";
         name2 = "";
+        name3 = "";
         info1 = "";
         info2 = "";
+        info3 = "";
 
         Intent intent = getIntent();
 
@@ -100,13 +109,18 @@ public class ThingsToDoActivity extends Activity {
 
     private void getInfo(JSONArray thingsToDo) {
         try {
+
             JSONObject thingToDo1 = thingsToDo.getJSONObject(THING_TO_DO_1);
             JSONObject thingToDo2 = thingsToDo.getJSONObject(THING_TO_DO_2);
+            JSONObject thingToDo3 = thingsToDo.getJSONObject(THING_TO_DO_3);
+
             StringBuilder infoBuilder1 = new StringBuilder();
             StringBuilder infoBuilder2 = new StringBuilder();
+            StringBuilder infoBuilder3 = new StringBuilder();
 
             name1 = thingToDo1.getString("name");
             name2 = thingToDo2.getString("name");
+            name3 = thingToDo3.getString("name");
 
             infoBuilder1.append("Description: ").append(thingToDo1.getString("description"))
                     .append("\n").append("\n")
@@ -120,8 +134,15 @@ public class ThingsToDoActivity extends Activity {
                     .append("\n").append("\n")
                     .append("Website: ").append(thingToDo2.getString("website"));
 
+            infoBuilder3.append("Description: ").append(thingToDo3.getString("description"))
+                    .append("\n").append("\n")
+                    .append("Address: ").append(thingToDo3.getString("address"))
+                    .append("\n").append("\n")
+                    .append("Website: ").append(thingToDo3.getString("website"));
+
             info1 = infoBuilder1.toString();
             info2 = infoBuilder2.toString();
+            info3 = infoBuilder3.toString();
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -131,7 +152,9 @@ public class ThingsToDoActivity extends Activity {
     private void setInfo() {
         txtName1.setText(name1);
         txtName2.setText(name2);
+        txtName3.setText(name3);
         txtInfo1.setText(info1);
         txtInfo2.setText(info2);
+        txtInfo3.setText(info3);
     }
 }
