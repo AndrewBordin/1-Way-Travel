@@ -3,8 +3,11 @@ package com.example.andrew.project_bordin_costa;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -22,7 +25,7 @@ public class EmergencyActivity extends Activity {
 
     TextView txtDescription;
     TextView txtWebsite;
-    TextView txtNumber;
+    Button btnCall;
 
     String description;
     String website;
@@ -35,7 +38,7 @@ public class EmergencyActivity extends Activity {
 
         txtDescription = findViewById(R.id.txt_description);
         txtWebsite = findViewById(R.id.txt_website);
-        txtNumber = findViewById(R.id.txt_number);
+        btnCall = findViewById(R.id.btnCall);
 
         description = "";
         website = "";
@@ -48,6 +51,17 @@ public class EmergencyActivity extends Activity {
             loadInfo(arrayPosition);
             setInfo();
         }
+
+        btnCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialContactPhone(number);
+            }
+        });
+    }
+
+    private void dialContactPhone(final String phoneNumber) {
+        startActivity(new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phoneNumber, null)));
     }
 
     public void loadInfo(int position) {
@@ -101,6 +115,5 @@ public class EmergencyActivity extends Activity {
     private void setInfo() {
         txtDescription.setText(description);
         txtWebsite.setText(website);
-        txtNumber.setText(number);
     }
 }
