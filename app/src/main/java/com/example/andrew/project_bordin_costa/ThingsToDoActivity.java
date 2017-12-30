@@ -6,6 +6,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -28,6 +29,9 @@ public class ThingsToDoActivity extends Activity {
     TextView txtInfo1;
     TextView txtInfo2;
     TextView txtInfo3;
+    ImageView img1;
+    ImageView img2;
+    ImageView img3;
 
     String name1;
     String name2;
@@ -51,6 +55,9 @@ public class ThingsToDoActivity extends Activity {
         txtInfo1 = findViewById(R.id.txt_info1);
         txtInfo2 = findViewById(R.id.txt_info2);
         txtInfo3 = findViewById(R.id.txt_info3);
+        img1 = findViewById(R.id.img_1);
+        img2 = findViewById(R.id.img_2);
+        img3 = findViewById(R.id.img_3);
 
         name1 = "";
         name2 = "";
@@ -64,6 +71,7 @@ public class ThingsToDoActivity extends Activity {
         if(intent != null){
             arrayPosition = intent.getIntExtra("arrayPosition", 0);
             loadInfo(arrayPosition);
+            loadImages(arrayPosition);
             setInfo();
         }
 
@@ -90,6 +98,37 @@ public class ThingsToDoActivity extends Activity {
             getInfo(thingsToDo);
         } catch (JSONException e) {
             e.printStackTrace();
+        }
+
+    }
+
+    private void loadImages(int position) {
+
+        switch (position){
+            case 0:
+                img1.setImageDrawable(getResources().getDrawable(R.drawable.toronto2));
+                img2.setImageDrawable(getResources().getDrawable(R.drawable.ripleys));
+                img3.setImageDrawable(getResources().getDrawable(R.drawable.eatoncentre));
+                break;
+
+            case 1:
+                img1.setImageDrawable(getResources().getDrawable(R.drawable.londoneye));
+                img2.setImageDrawable(getResources().getDrawable(R.drawable.bigben));
+                img3.setImageDrawable(getResources().getDrawable(R.drawable.buckinghampalace));
+                break;
+
+            case 2:
+                img1.setImageDrawable(getResources().getDrawable(R.drawable.goldengate));
+                img2.setImageDrawable(getResources().getDrawable(R.drawable.pier39));
+                img3.setImageDrawable(getResources().getDrawable(R.drawable.coittower));
+                break;
+
+            case 3:
+                img1.setImageDrawable(getResources().getDrawable(R.drawable.operahouse));
+                img2.setImageDrawable(getResources().getDrawable(R.drawable.harbourbridge));
+                img3.setImageDrawable(getResources().getDrawable(R.drawable.tarongazoo));
+                break;
+
         }
 
     }
@@ -122,19 +161,19 @@ public class ThingsToDoActivity extends Activity {
             name2 = thingToDo2.getString("name");
             name3 = thingToDo3.getString("name");
 
-            infoBuilder1.append("Description: ").append(thingToDo1.getString("description"))
+            infoBuilder1.append(thingToDo1.getString("description"))
                     .append("\n").append("\n")
                     .append("Address: ").append(thingToDo1.getString("address"))
                     .append("\n").append("\n")
                     .append("Website: ").append(thingToDo1.getString("website"));
 
-            infoBuilder2.append("Description: ").append(thingToDo2.getString("description"))
+            infoBuilder2.append(thingToDo2.getString("description"))
                     .append("\n").append("\n")
                     .append("Address: ").append(thingToDo2.getString("address"))
                     .append("\n").append("\n")
                     .append("Website: ").append(thingToDo2.getString("website"));
 
-            infoBuilder3.append("Description: ").append(thingToDo3.getString("description"))
+            infoBuilder3.append(thingToDo3.getString("description"))
                     .append("\n").append("\n")
                     .append("Address: ").append(thingToDo3.getString("address"))
                     .append("\n").append("\n")
