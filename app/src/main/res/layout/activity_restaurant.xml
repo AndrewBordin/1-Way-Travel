@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#81C784"
+    android:background="#E1F5FE"
     tools:context="com.example.andrew.project_bordin_costa.RestaurantActivity">
 
     <android.support.constraint.ConstraintLayout
@@ -17,8 +17,9 @@
             android:id="@+id/txt_restaurant_title"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:background="#C8E6C9"
+            android:background="#81D4FA"
             android:text="Restaurants"
+            android:textStyle="bold"
             android:paddingLeft="8dp"
             android:paddingTop="8dp"
             android:textAppearance="@android:style/TextAppearance.Holo.Large"
@@ -79,7 +80,7 @@
             android:id="@+id/txt_info_r1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="#C8E6C9"
+            android:background="#B3E5FC"
             android:paddingLeft="8dp"
             android:text="Info about it"
             android:textAppearance="@android:style/TextAppearance.Holo.Medium"
@@ -92,7 +93,7 @@
             android:id="@+id/txt_info_r2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="#C8E6C9"
+            android:background="#B3E5FC"
             android:paddingLeft="8dp"
             android:text="Info about it"
             android:textAppearance="@android:style/TextAppearance.Holo.Medium"
