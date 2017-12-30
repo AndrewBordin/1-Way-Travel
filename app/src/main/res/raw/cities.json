@@ -5,19 +5,19 @@
 					"name": "CN Tower",
 					"description": "One of Toronto's finest landmarks. 553.3 metres high, the CN Tower features a beautiful views of the city, a glass floor and revolving restaurant with delicious food.",
 					"address": "301 Front St W, Toronto, ON M5V 2T6, Canada",
-					"website": "http://www.cntower.ca/en-ca/home.html"
+					"website": "<a href='http://www.cntower.ca/en-ca/home.html'>http://www.cntower.ca/en-ca/home.html</a>"
 				},
 				{
 					"name": "Ripley's Aquarium of Canada",
 					"description": "Opened in 2013, this modern Toronto aquarium has many species & habitats on display. Throughout the year, they host events(such as Halloween night) that keeps things interesting whenever you decide to visit!",
 					"address": "288 Bremner Blvd, Toronto, ON M5V 3L9, Canada",
-					"website": "https://www.ripleyaquariums.com/canada/"
+					"website": "<a href='https://www.ripleyaquariums.com/canada/'>https://www.ripleyaquariums.com/canada/</a>"
 				},
 				{
 					"name": "Toronto Eaton Centre",
 					"description": "If you need a place to shop, look no further, this is the right place. North America 's busiest mall has got a variety of shops and restaurants that is sure to please anybody.",
 					"address": "220 Yonge St, Toronto, ON M5B 2H1, Canada",
-					"website": "https://www.cfshops.com/toronto-eaton-centre.html"
+					"website": "<a href='https://www.cfshops.com/toronto-eaton-centre.html'>https://www.cfshops.com/toronto-eaton-centre.html</a>"
 				}
 			],
 
@@ -54,19 +54,19 @@
 					"name": "London Eye",
 					"description": "Built in 1998 and standing at 135 metres, the London Eye is an iconic giant Ferris Wheel on the South Bank of River Thames which will provide visitors with priviledged views of the city.",
 					"address": "Lambeth, London SE1 7PB, UK",
-					"website": "https://www.londoneye.com/"
+					"website": "<a href='https://www.londoneye.com/'>https://www.londoneye.com/</a>"
 				},
 				{
 					"name": "Big Ben",
 					"description": "When one thinks of the UK it is impossible to not think of the Big Ben; a 16-storey Gothic clocktower and a true national symbol.",
 					"address": "Westminster, London SW1A 0AA, UK",
-					"website": "https://www.visitlondon.com/things-to-do/sightseeing/london-attraction/big-ben"
+					"website": "<a href='https://www.visitlondon.com/things-to-do/sightseeing/london-attraction/big-ben'>https://www.visitlondon.com/things-to-do/sightseeing/london-attraction/big-ben</a>"
 				},
 				{
 					"name": "Buckingham Palace",
 					"description": "The residence and headquarter's of the monarch's of the United Kingdom. Visitors may visit the palace or watch the changing of the guard.",
 					"address": "Westminster, London SW1A 1AA, UK",
-					"website": "https://www.royal.uk/search?tags%5B0%5D=Buckingham%20Palace"
+					"website": "<a href='https://www.royal.uk/search?tags%5B0%5D=Buckingham%20Palace'>https://www.royal.uk/search?tags%5B0%5D=Buckingham%20Palace</a>"
 				}
 			],
 
@@ -102,19 +102,20 @@
 					"name": "Golden Gate Bridge",
 					"description": "Unfortunately known as the second most used suicide site in the world, the Golden Gate Bridge is a beautiful piece of engineering connecting the San Francisco Bay and the Pacific Ocean.",
 					"address": "Golden Gate Bridge, San Francisco, CA, USA",
-					"website": "http://www.goldengatebridge.org/"
+					"website": "<a href='http://www.goldengatebridge.org/'>http://www.goldengatebridge.org/</a>"
 				},
 				{
 					"name": "Pier 39",
 					"description": "A popular touristic attraction and shopping centre with scenic views, sea-lion sightings, eateries, shops & entertainment.",
 					"address": "Beach St & The Embarcadero, San Francisco, CA 94133, USA",
-					"website": "https://www.pier39.com/"
+					"website": "<a href='https://www.pier39.com/'>https://www.pier39.com/</a>"
+
 				},
 				{
 					"name": "Coit Tower",
 					"description": "Also known as Lilian Coit Memorial Tower, is a 64 metre tower built in the 1930's known for its 360-degree views.",
 					"address": "1 Telegraph Hill Blvd, San Francisco, CA 94133, USA",
-					"website": "http://www.sftravel.com/coit-tower"
+					"website": "<a href='http://www.sftravel.com/coit-tower'>http://www.sftravel.com/coit-tower</a>"
 				}
 			],
 
@@ -151,19 +152,19 @@
 					"name": "Sydney Opera House",
 					"description": "One of the 20th century's most distinctive buildings, the Sydney Opera House is a landmark art centre for the performing arts, such as opera, theatre, music and dance.",
 					"address": "Bennelong Point, Sydney NSW 2000, Australia",
-					"website": "https://www.sydneyoperahouse.com/"
+					"website": "<a href='https://www.sydneyoperahouse.com/'>https://www.sydneyoperahouse.com/</a>"
 				},
 				{
 					"name": "Sydney Harbour Bridge",
 					"description": "Iconic steel arch bridge built in 1932, connecting Sydney Central and North Shore. Offers a bridge climb experience.",
 					"address": "Sydney Harbour Bridge, Sydney NSW, Australia",
-					"website": "https://www.bridgeclimb.com/"
+					"website": "<a href='https://www.bridgeclimb.com/'>https://www.bridgeclimb.com/</a>"
 				},
 				{
 					"name": "Taronga Zoo",
 					"description": "Officially opened on 7 October 1916, the Taronga Zoo is the city zoo of Sydney with over 340 separate animal species and a ferry service to the city centre.",
 					"address": "Bradleys Head Rd, Mosman NSW 2088, Australia",
-					"website": "https://taronga.org.au/taronga-zoo"
+					"website": "<a href='https://taronga.org.au/taronga-zoo'>https://taronga.org.au/taronga-zoo</a>"
 				}
 			],
 

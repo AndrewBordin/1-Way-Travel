@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -209,16 +211,26 @@ public class ThingsToDoActivity extends Activity {
         txtName1.setText(name1);
         txtTtdDescription1.setText(description1);
         txtTtdAddress1.setText(address1);
-        txtTtdWebsite1.setText(website1);
+        txtTtdWebsite1.setClickable(true);
+        txtTtdWebsite1.setMovementMethod(LinkMovementMethod.getInstance());
+        String text = website1;
+        txtTtdWebsite1.setText(Html.fromHtml(text));
 
         txtName2.setText(name2);
         txtTtdDescription2.setText(description2);
         txtTtdAddress2.setText(address2);
-        txtTtdWebsite2.setText(website2);
+        txtTtdWebsite2.setClickable(true);
+        txtTtdWebsite2.setMovementMethod(LinkMovementMethod.getInstance());
+        String text2 = website2;
+        txtTtdWebsite2.setText(Html.fromHtml(text2));
 
         txtName3.setText(name3);
         txtTtdDescription3.setText(description3);
         txtTtdAddress3.setText(address3);
-        txtTtdWebsite3.setText(website3);
+        txtTtdWebsite3.setClickable(true);
+        txtTtdWebsite3.setMovementMethod(LinkMovementMethod.getInstance());
+        String text3 = website3;
+        txtTtdWebsite3.setText(Html.fromHtml(text3));
+
     }
 }

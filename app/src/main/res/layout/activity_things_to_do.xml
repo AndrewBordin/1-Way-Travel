@@ -76,7 +76,7 @@
                 android:id="@+id/txt_ttd_address1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="15dp"
                 android:paddingLeft="8dp"
                 android:text="Address"
                 android:textAppearance="@android:style/TextAppearance.Holo.Medium"
@@ -86,17 +86,31 @@
                 app:layout_constraintTop_toBottomOf="@+id/txt_ttd_description1" />
 
             <TextView
+                android:id="@+id/txt_website_description1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="8dp"
+                android:text="For more information, visit:"
+                android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_ttd_address1" />
+
+            <TextView
                 android:id="@+id/txt_ttd_website1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="2dp"
                 android:paddingLeft="8dp"
                 android:text="Website"
                 android:textAppearance="@android:style/TextAppearance.Holo.Medium"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_ttd_address1" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_website_description1" />
         </android.support.constraint.ConstraintLayout>
 
         <TextView
@@ -152,7 +166,7 @@
                 android:id="@+id/txt_ttd_address2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="15dp"
                 android:paddingLeft="8dp"
                 android:text="Address"
                 android:textAppearance="@android:style/TextAppearance.Holo.Medium"
@@ -160,6 +174,20 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_ttd_description2" />
+
+            <TextView
+                android:id="@+id/txt_website_description2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="8dp"
+                android:text="For more information, vist:"
+                android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_ttd_address2" />
 
             <TextView
                 android:id="@+id/txt_ttd_website2"
@@ -172,7 +200,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_ttd_address2" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_website_description2" />
         </android.support.constraint.ConstraintLayout>
 
         <TextView
@@ -228,7 +256,7 @@
                 android:id="@+id/txt_ttd_address3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="15dp"
                 android:paddingLeft="8dp"
                 android:text="Address"
                 android:textAppearance="@android:style/TextAppearance.Holo.Medium"
@@ -236,6 +264,20 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_ttd_description3" />
+
+            <TextView
+                android:id="@+id/txt_website_description3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="8dp"
+                android:text="For more information, vist:"
+                android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_ttd_address3" />
 
             <TextView
                 android:id="@+id/txt_ttd_website3"
@@ -248,7 +290,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_ttd_address3" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_website_description3" />
         </android.support.constraint.ConstraintLayout>
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
