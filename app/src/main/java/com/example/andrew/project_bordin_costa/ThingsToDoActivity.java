@@ -22,21 +22,39 @@ public class ThingsToDoActivity extends Activity {
     int arrayPosition;
 
     TextView txtName1;
-    TextView txtName2;
-    TextView txtName3;
-    TextView txtInfo1;
-    TextView txtInfo2;
-    TextView txtInfo3;
+    TextView txtTtdDescription1;
+    TextView txtTtdAddress1;
+    TextView txtTtdWebsite1;
     ImageView img1;
-    ImageView img2;
-    ImageView img3;
 
     String name1;
+    String description1;
+    String address1;
+    String website1;
+
+
+    TextView txtName2;
+    TextView txtTtdDescription2;
+    TextView txtTtdAddress2;
+    TextView txtTtdWebsite2;
+    ImageView img2;
+
     String name2;
+    String description2;
+    String address2;
+    String website2;
+
+
+    TextView txtName3;
+    TextView txtTtdDescription3;
+    TextView txtTtdAddress3;
+    TextView txtTtdWebsite3;
+    ImageView img3;
+
     String name3;
-    String info1;
-    String info2;
-    String info3;
+    String description3;
+    String address3;
+    String website3;
 
     final int THING_TO_DO_1 = 0;
     final int THING_TO_DO_2 = 1;
@@ -48,21 +66,37 @@ public class ThingsToDoActivity extends Activity {
         setContentView(R.layout.activity_things_to_do);
 
         txtName1 = findViewById(R.id.txt_name1);
-        txtName2 = findViewById(R.id.txt_name2);
-        txtName3 = findViewById(R.id.txt_name3);
-        txtInfo1 = findViewById(R.id.txt_info1);
-        txtInfo2 = findViewById(R.id.txt_info2);
-        txtInfo3 = findViewById(R.id.txt_info3);
+        txtTtdDescription1 = findViewById(R.id.txt_ttd_description1);
+        txtTtdAddress1 = findViewById(R.id.txt_ttd_address1);
+        txtTtdWebsite1 = findViewById(R.id.txt_ttd_website1);
         img1 = findViewById(R.id.img_1);
-        img2 = findViewById(R.id.img_2);
-        img3 = findViewById(R.id.img_3);
 
         name1 = "";
+        description1 = "";
+        address1 = "";
+        website1 = "";
+
+        txtName2 = findViewById(R.id.txt_name2);
+        txtTtdDescription2 = findViewById(R.id.txt_ttd_description2);
+        txtTtdAddress2 = findViewById(R.id.txt_ttd_address2);
+        txtTtdWebsite2 = findViewById(R.id.txt_ttd_website2);
+        img2 = findViewById(R.id.img_2);
+
         name2 = "";
+        description2 = "";
+        address2 = "";
+        website2 = "";
+
+        txtName3 = findViewById(R.id.txt_name3);
+        txtTtdDescription3 = findViewById(R.id.txt_ttd_description3);
+        txtTtdAddress3 = findViewById(R.id.txt_ttd_address3);
+        txtTtdWebsite3 = findViewById(R.id.txt_ttd_website3);
+        img3 = findViewById(R.id.img_3);
+
         name3 = "";
-        info1 = "";
-        info2 = "";
-        info3 = "";
+        description3 = "";
+        address3 = "";
+        website3 = "";
 
         Intent intent = getIntent();
 
@@ -151,35 +185,20 @@ public class ThingsToDoActivity extends Activity {
             JSONObject thingToDo2 = thingsToDo.getJSONObject(THING_TO_DO_2);
             JSONObject thingToDo3 = thingsToDo.getJSONObject(THING_TO_DO_3);
 
-            StringBuilder infoBuilder1 = new StringBuilder();
-            StringBuilder infoBuilder2 = new StringBuilder();
-            StringBuilder infoBuilder3 = new StringBuilder();
-
             name1 = thingToDo1.getString("name");
+            description1 = thingToDo1.getString("description");
+            address1 = thingToDo1.getString("address");
+            website1 = thingToDo1.getString("website");
+
             name2 = thingToDo2.getString("name");
+            description2 = thingToDo2.getString("description");
+            address2 = thingToDo2.getString("address");
+            website2 = thingToDo2.getString("website");
+
             name3 = thingToDo3.getString("name");
-
-            infoBuilder1.append(thingToDo1.getString("description"))
-                    .append("\n").append("\n")
-                    .append("Address: ").append(thingToDo1.getString("address"))
-                    .append("\n").append("\n")
-                    .append("Website: ").append(thingToDo1.getString("website"));
-
-            infoBuilder2.append(thingToDo2.getString("description"))
-                    .append("\n").append("\n")
-                    .append("Address: ").append(thingToDo2.getString("address"))
-                    .append("\n").append("\n")
-                    .append("Website: ").append(thingToDo2.getString("website"));
-
-            infoBuilder3.append(thingToDo3.getString("description"))
-                    .append("\n").append("\n")
-                    .append("Address: ").append(thingToDo3.getString("address"))
-                    .append("\n").append("\n")
-                    .append("Website: ").append(thingToDo3.getString("website"));
-
-            info1 = infoBuilder1.toString();
-            info2 = infoBuilder2.toString();
-            info3 = infoBuilder3.toString();
+            description3 = thingToDo3.getString("description");
+            address3 = thingToDo3.getString("address");
+            website3 = thingToDo3.getString("website");
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -188,10 +207,18 @@ public class ThingsToDoActivity extends Activity {
 
     private void setInfo() {
         txtName1.setText(name1);
+        txtTtdDescription1.setText(description1);
+        txtTtdAddress1.setText(address1);
+        txtTtdWebsite1.setText(website1);
+
         txtName2.setText(name2);
+        txtTtdDescription2.setText(description2);
+        txtTtdAddress2.setText(address2);
+        txtTtdWebsite2.setText(website2);
+
         txtName3.setText(name3);
-        txtInfo1.setText(info1);
-        txtInfo2.setText(info2);
-        txtInfo3.setText(info3);
+        txtTtdDescription3.setText(description3);
+        txtTtdAddress3.setText(address3);
+        txtTtdWebsite3.setText(website3);
     }
 }
