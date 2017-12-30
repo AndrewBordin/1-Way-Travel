@@ -49,7 +49,7 @@ public class CalendarActivity extends Activity {
                         datePicker.getMonth(),
                         datePicker.getDayOfMonth(),
                         0,
-                        0,
+                        00,
                         00);
 
                 if(cal.compareTo(current) <= 0){

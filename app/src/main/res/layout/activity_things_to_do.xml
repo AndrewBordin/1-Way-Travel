@@ -105,12 +105,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:paddingLeft="8dp"
-                android:text="Website"
                 android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                android:textColorLink="#0D47A1"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_website_description1" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_website_description1"
+                tools:text="Website URL" />
         </android.support.constraint.ConstraintLayout>
 
         <TextView
@@ -197,6 +199,8 @@
                 android:paddingLeft="8dp"
                 android:text="Website"
                 android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                android:textColorLink="#0D47A1"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -287,6 +291,8 @@
                 android:paddingLeft="8dp"
                 android:text="Website"
                 android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+                android:textColorLink="#0D47A1"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
