@@ -23,6 +23,7 @@ public class DestinationActivity extends Activity implements View.OnClickListene
     private static final int RESTAURANT_ACTIVITY = 4;
     private static final int MAP_ACTIVITY = 5;
     private static final int EMERGENCY_ACTIVITY = 6;
+    private static final int CALENDAR_ACTIVITY = 7;
     int arrayPosition;
 
 
@@ -31,6 +32,7 @@ public class DestinationActivity extends Activity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_destination);
         btnDatePicker = findViewById(R.id.btnDateButton);
+        btnDatePicker.setOnClickListener(this);
 
         btnThingsToDo = findViewById(R.id.btnThingstodo);
         btnThingsToDo.setOnClickListener(this);
@@ -90,6 +92,13 @@ public class DestinationActivity extends Activity implements View.OnClickListene
                 intent = new Intent(getApplicationContext(),EmergencyActivity.class);
                 intent.putExtra("arrayPosition", arrayPosition);
                 startActivityForResult(intent, EMERGENCY_ACTIVITY);
+                break;
+
+            case R.id.btnDateButton:
+                //code
+                intent = new Intent(getApplicationContext(),CalendarActivity.class);
+                intent.putExtra("arrayPosition", arrayPosition);
+                startActivityForResult(intent, CALENDAR_ACTIVITY);
                 break;
         }
     }
