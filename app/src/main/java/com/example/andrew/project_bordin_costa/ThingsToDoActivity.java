@@ -55,6 +55,7 @@ public class ThingsToDoActivity extends Activity {
         if(intent != null){
             arrayPosition = intent.getIntExtra("arrayPosition", 0);
             loadInfo(arrayPosition);
+            setInfo();
         }
 
     }
@@ -78,18 +79,10 @@ public class ThingsToDoActivity extends Activity {
         try {
             JSONArray thingsToDo = city.getJSONArray("things-to-do");
             getInfo(thingsToDo);
-            setInfo();
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-    }
-
-    private void setInfo() {
-        txtName1.setText(name1);
-        txtName2.setText(name2);
-        txtInfo1.setText(info1);
-        txtInfo2.setText(info2);
     }
 
     private JSONObject getCity(String jsonString, int position) {
@@ -116,15 +109,15 @@ public class ThingsToDoActivity extends Activity {
             name2 = thingToDo2.getString("name");
 
             infoBuilder1.append("Description: ").append(thingToDo1.getString("description"))
-                    .append("\n")
+                    .append("\n").append("\n")
                     .append("Address: ").append(thingToDo1.getString("address"))
-                    .append("\n")
+                    .append("\n").append("\n")
                     .append("Website: ").append(thingToDo1.getString("website"));
 
             infoBuilder2.append("Description: ").append(thingToDo2.getString("description"))
-                    .append("\n")
+                    .append("\n").append("\n")
                     .append("Address: ").append(thingToDo2.getString("address"))
-                    .append("\n")
+                    .append("\n").append("\n")
                     .append("Website: ").append(thingToDo2.getString("website"));
 
             info1 = infoBuilder1.toString();
@@ -133,5 +126,12 @@ public class ThingsToDoActivity extends Activity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    private void setInfo() {
+        txtName1.setText(name1);
+        txtName2.setText(name2);
+        txtInfo1.setText(info1);
+        txtInfo2.setText(info2);
     }
 }
