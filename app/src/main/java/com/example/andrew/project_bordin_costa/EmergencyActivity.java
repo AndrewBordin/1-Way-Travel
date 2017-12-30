@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -114,6 +116,9 @@ public class EmergencyActivity extends Activity {
 
     private void setInfo() {
         txtDescription.setText(description);
-        txtWebsite.setText(website);
+        txtWebsite.setClickable(true);
+        txtWebsite.setMovementMethod(LinkMovementMethod.getInstance());
+        String text = website;
+        txtWebsite.setText(Html.fromHtml(text));
     }
 }

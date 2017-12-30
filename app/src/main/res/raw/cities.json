@@ -42,9 +42,9 @@
 			],
 
 			"emergency": {
-				"description": "For any immediate emergencies, call 911. Check the Toronto Emergency Services for more information.",
+				"description": "For any future emergencies, call 911. For an immediate emergency, click below.",
 				"number": "911",
-				"website": "https://www1.toronto.ca/wps/portal/contentonly?vgnextoid=163307ceb6f8e310VgnVCM10000071d60f89RCRD"
+				"website": "<a href='https://www1.toronto.ca/wps/portal/contentonly?vgnextoid=163307ceb6f8e310VgnVCM10000071d60f89RCRD'>Please visit the Toronto Emergency Services website for more information.</a>"
 
 			}
 		},
@@ -91,10 +91,9 @@
 			],
 
 			"emergency": {
-				"description": "For any immediate emergencies, call 112 or 999.",
+				"description": "For any future emergencies, call 112 or 999. For an immediate emergency, click below.",
 				"number": "112",
-				"website": "https://www.visitlondon.com/traveller-information/essential-information/emergency-services#WfkEuau3IUVg8kmw.97"
-
+				"website": "<a href='https://www.visitlondon.com/traveller-information/essential-information/emergency-services#WfkEuau3IUVg8kmw.97'>Please visit the official visitor's guide of London for more information</a>"
 			}
 		},
 		{
@@ -140,9 +139,9 @@
 			],
 
 			"emergency": {
-				"description": "For any immediate emergencies, call 911. Check the Department of Emergency Management for more information.",
+				"description": "For any future emergencies, call 911. For an immediate emergency, click below.",
 				"number": "911",
-				"website": "http://sfdem.org/calling-9-1-1"
+				"website": "<a href='http://sfdem.org/calling-9-1-1'>Please visit the Department of Emergency Management website for more information.</a>"
 
 			}
 		},
@@ -189,9 +188,9 @@
 			],
 
 			"emergency": {
-				"description": "For any immediate emergencies, call 000. Check Australian Government Emergency Services for more information.",
+				"description": "For any future emergencies, call 000. For an immediate emergency, click below.",
 				"number": "000",
-				"website": "http://www.australia.gov.au/information-and-services/public-safety-and-law/emergency-services"
+				"website": "<a href='http://www.australia.gov.au/information-and-services/public-safety-and-law/emergency-services'>Please visit the Australian Government Emergency Services website for more information.</a>"
 
 			}
 		}
