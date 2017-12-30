@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -20,15 +21,18 @@ public class RestaurantActivity extends Activity {
 
     int arrayPosition;
 
-    TextView txtInfo1;
-    TextView txtInfo2;
-    TextView txtReview1;
-    TextView txtReview2;
+    TextView txtRestaurant1;
+    TextView txtRestaurant2;
+    TextView txtInfoR1;
+    TextView txtInfoR2;
 
-    String info1;
-    String info2;
-    String review1;
-    String review2;
+    String restaurant1TXT;
+    String restaurant2TXT;
+    String infor1;
+    String infor2;
+
+    ImageView imgRestaurant1;
+    ImageView imgRestaurant2;
 
     final int RESTAURANT_1 = 0;
     final int RESTAURANT_2 = 1;
@@ -38,21 +42,25 @@ public class RestaurantActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant);
 
-        txtInfo1 = findViewById(R.id.txt_info1);
-        txtInfo2 = findViewById(R.id.txt_info2);
-        txtReview1 = findViewById(R.id.txt_review1);
-        txtReview2 = findViewById(R.id.txt_review2);
+        txtRestaurant1 = findViewById(R.id.txt_restaurant1);
+        txtRestaurant2 = findViewById(R.id.txt_restaurant2);
+        txtInfoR1 = findViewById(R.id.txt_info_r1);
+        txtInfoR2 = findViewById(R.id.txt_info_r2);
+        imgRestaurant1 = findViewById(R.id.img_restaurant1);
+        imgRestaurant2 = findViewById(R.id.img_restaurant2);
 
-        info1 = "";
-        info2 = "";
-        review1 = "";
-        review2 = "";
+        restaurant1TXT = "";
+        restaurant2TXT = "";
+        infor1 = "";
+        infor2 = "";
+
 
         Intent intent = getIntent();
 
         if(intent != null){
             arrayPosition = intent.getIntExtra("arrayPosition", 0);
             loadInfo(arrayPosition);
+            loadImages(arrayPosition);
             setInfo();
         }
     }
@@ -82,6 +90,30 @@ public class RestaurantActivity extends Activity {
 
     }
 
+    private void loadImages(int position) {
+        switch (position) {
+            case 0:
+                imgRestaurant1.setImageDrawable(getResources().getDrawable(R.drawable.carisma));
+                imgRestaurant2.setImageDrawable(getResources().getDrawable(R.drawable.alorestaurant));
+                break;
+
+            case 1:
+                imgRestaurant1.setImageDrawable(getResources().getDrawable(R.drawable.theledbury));
+                imgRestaurant2.setImageDrawable(getResources().getDrawable(R.drawable.tangia));
+                break;
+
+            case 2:
+                imgRestaurant1.setImageDrawable(getResources().getDrawable(R.drawable.latequeria));
+                imgRestaurant2.setImageDrawable(getResources().getDrawable(R.drawable.garydanko));
+                break;
+
+            case 3:
+                imgRestaurant1.setImageDrawable(getResources().getDrawable(R.drawable.mamak));
+                imgRestaurant2.setImageDrawable(getResources().getDrawable(R.drawable.mrwong));
+                break;
+        }
+    }
+
     private JSONObject getCity(String jsonString, int position) {
         try {
             JSONObject root = new JSONObject(jsonString);
@@ -100,46 +132,42 @@ public class RestaurantActivity extends Activity {
             JSONObject restaurant1 = restaurants.getJSONObject(RESTAURANT_1);
             JSONObject restaurant2 = restaurants.getJSONObject(RESTAURANT_2);
 
-            StringBuilder infoBuilder1 = new StringBuilder();
-            StringBuilder infoBuilder2 = new StringBuilder();
-            StringBuilder reviewBuilder1 = new StringBuilder();
-            StringBuilder reviewBuilder2 = new StringBuilder();
+            restaurant1TXT = restaurant1.getString("name");
+            restaurant2TXT = restaurant2.getString("name");
 
-            infoBuilder1.append("Restaurant Name: ").append(restaurant1.getString("name"))
-                    .append("\n")
-                    .append("Food Type: ").append(restaurant1.getString("food-type"))
+            StringBuilder infoR1Builder = new StringBuilder();
+            StringBuilder infoR2Builder = new StringBuilder();
+
+
+
+            infoR1Builder.append("Food Type: ").append(restaurant1.getString("food-type"))
                     .append("\n")
                     .append("Address: ").append(restaurant1.getString("address"))
-                    .append("\n")
+                    .append("\n").append("\n")
                     .append("Website: ").append(restaurant1.getString("website"))
-                    .append("\n");
-
-            reviewBuilder1.append("Review By: ").append(restaurant1.getString("review-by"))
+                    .append("\n").append("\n")
+                    .append("Review By: ").append(restaurant1.getString("review-by"))
                     .append("\n")
-                    .append("Review: ").append(restaurant1.getString("review"))
-                    .append("\n")
+                    .append("\"").append(restaurant1.getString("review")).append("\"")
+                    .append("\n").append("\n")
                     .append("Stars: ").append(restaurant1.getString("stars"))
-                    .append("\n");
+                    .append("\n").append("\n");
 
-            infoBuilder2.append("Restaurant Name: ").append(restaurant2.getString("name"))
-                    .append("\n")
-                    .append("Food Type: ").append(restaurant2.getString("food-type"))
+            infoR2Builder.append("Food Type: ").append(restaurant2.getString("food-type"))
                     .append("\n")
                     .append("Address: ").append(restaurant2.getString("address"))
+                    .append("\n").append("\n")
                     .append("Website: ").append(restaurant2.getString("website"))
-                    .append("\n");
-
-            reviewBuilder2.append("Review By: ").append(restaurant2.getString("review-by"))
+                    .append("\n").append("\n")
+                    .append("Review By: ").append(restaurant2.getString("review-by"))
                     .append("\n")
-                    .append("Review: ").append(restaurant2.getString("review"))
-                    .append("\n")
+                    .append("\"").append(restaurant2.getString("review")).append("\"")
+                    .append("\n").append("\n")
                     .append("Stars: ").append(restaurant2.getString("stars"))
-                    .append("\n");
+                    .append("\n").append("\n");
 
-            info1 = infoBuilder1.toString();
-            info2 = infoBuilder2.toString();
-            review1 = reviewBuilder1.toString();
-            review2 = reviewBuilder2.toString();
+            infor1 = infoR1Builder.toString();
+            infor2 = infoR2Builder.toString();
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -147,9 +175,9 @@ public class RestaurantActivity extends Activity {
     }
 
     private void setInfo() {
-        txtInfo1.setText(info1);
-        txtReview1.setText(review1);
-        txtInfo2.setText(info2);
-        txtReview2.setText(review2);
+        txtRestaurant1.setText(restaurant1TXT);
+        txtRestaurant2.setText(restaurant2TXT);
+        txtInfoR1.setText(infor1);
+        txtInfoR2.setText(infor2);
     }
 }
