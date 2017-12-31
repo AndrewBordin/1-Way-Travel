@@ -48,9 +48,11 @@ public class CalendarActivity extends Activity {
                 cal.set(datePicker.getYear(),
                         datePicker.getMonth(),
                         datePicker.getDayOfMonth(),
-                        0,
-                        00,
-                        00);
+                        7,
+                        23,
+                        45);
+
+                cal.set(Calendar.AM_PM, Calendar.PM);
 
                 if(cal.compareTo(current) <= 0){
                     //The set Date/Time already passed
