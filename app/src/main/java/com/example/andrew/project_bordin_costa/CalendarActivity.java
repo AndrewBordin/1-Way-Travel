@@ -48,8 +48,8 @@ public class CalendarActivity extends Activity {
                 cal.set(datePicker.getYear(),
                         datePicker.getMonth() - 1,
                         datePicker.getDayOfMonth(),
-                        7,
-                        53,
+                        8,
+                        05,
                         00);
 
                 cal.set(Calendar.AM_PM, Calendar.PM);
@@ -57,7 +57,7 @@ public class CalendarActivity extends Activity {
                 if(cal.compareTo(current) <= 0){
                     //The set Date/Time already passed
                     Toast.makeText(getApplicationContext(),
-                            "Your vacation is in less than a month. Hurry up and book it" +
+                            "Your vacation is in less than a month. Hurry up and book it " +
                                     "on expedia.ca!",
                             Toast.LENGTH_LONG).show();
                 }else{
