@@ -37,9 +37,8 @@ public class AlarmReceiver extends BroadcastReceiver {
                 PendingIntent.FLAG_CANCEL_CURRENT);
 
         myNotification = new NotificationCompat.Builder(context)
-                .setContentTitle("Vacation Time!")
-                .setContentText("You have chosen to travel in exactly one month. Have you booked your vacation" +
-                        "at https://www.expedia.ca/ yet?")
+                .setContentTitle("Your vacation is in a month!")
+                .setContentText("Click here to book it at expedia.ca")
                 .setTicker("Notification!")
                 .setWhen(System.currentTimeMillis())
                 .setContentIntent(pendingIntent)
