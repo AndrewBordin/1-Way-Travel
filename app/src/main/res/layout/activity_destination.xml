@@ -64,6 +64,7 @@
         android:layout_marginTop="12dp"
         android:background="@drawable/thingstodo"
         android:text="Things to do"
+        android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnMap"
