@@ -6,6 +6,8 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.andrew.project_bordin_costa.model.Destination;
 
@@ -19,6 +21,8 @@ public class DestinationActivity extends Activity implements View.OnClickListene
     Button btnRestaurants;
     Button btnMap;
     Button btnEmergency;
+    ImageView imageCity;
+    TextView txtDestinationName;
     private static final int THINGS_TO_DO_ACTIVITY = 3;
     private static final int RESTAURANT_ACTIVITY = 4;
     private static final int MAP_ACTIVITY = 5;
@@ -33,6 +37,10 @@ public class DestinationActivity extends Activity implements View.OnClickListene
         setContentView(R.layout.activity_destination);
         btnDatePicker = findViewById(R.id.btnDateButton);
         btnDatePicker.setOnClickListener(this);
+
+        txtDestinationName = findViewById(R.id.txtDestName);
+
+        imageCity = findViewById(R.id.imageCity);
 
         btnThingsToDo = findViewById(R.id.btnThingstodo);
         btnThingsToDo.setOnClickListener(this);
@@ -56,9 +64,9 @@ public class DestinationActivity extends Activity implements View.OnClickListene
 
             String cityname = destinationArrayList.get(arrayPosition).getCityName();
 
-            btnDatePicker.setText(getResources().getString(R.string.pick_a_date_msg, cityname));
+            txtDestinationName.setText(cityname);
 
-            btnDatePicker.setBackgroundResource(destinationArrayList.get(arrayPosition).getCityPicture());
+            imageCity.setImageResource(destinationArrayList.get(arrayPosition).getCityPicture());
         }
     }
 

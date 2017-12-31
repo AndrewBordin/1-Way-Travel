@@ -30,7 +30,7 @@ public class Destination implements Serializable {
 
         ArrayList<Destination> destinations = new ArrayList<>();
 
-        destinations.add(new Destination("Toronto", R.drawable.toronto2));
+        destinations.add(new Destination("Toronto", R.drawable.toronto4));
         destinations.add(new Destination("London", R.drawable.london2));
         destinations.add(new Destination("San Fransisco", R.drawable.sanfran2));
         destinations.add(new Destination("Sydney", R.drawable.sydney2));
