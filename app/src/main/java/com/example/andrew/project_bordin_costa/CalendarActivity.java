@@ -57,8 +57,8 @@ public class CalendarActivity extends Activity {
                 notification.set(datePicker.getYear(),
                         datePicker.getMonth() - 1,
                         datePicker.getDayOfMonth(),
-                        9,
-                        15,
+                        0,
+                        00,
                         00);
 
                 notification.set(Calendar.AM_PM, Calendar.PM);
@@ -75,8 +75,7 @@ public class CalendarActivity extends Activity {
                     if (notification.compareTo(current) <= 0) {
                         //The date chosen is less than a month away
                         Toast.makeText(getApplicationContext(),
-                                "Your vacation is in less than a month. Hurry up and book it " +
-                                        "on expedia.ca!",
+                                "Your vacation is in less than a month! Go book it NOW!",
                                 Toast.LENGTH_LONG).show();
                     } else {
                         setAlarm(notification);
@@ -89,7 +88,7 @@ public class CalendarActivity extends Activity {
 
     private void setAlarm(Calendar targetCal){
         Toast.makeText(getApplicationContext(), "\n\n***\n"
-                + "You will be notified a month before your vacation to book your tickets" + "\n"
+                + "You will be notified a month before your vacation to book hotels and flight" + "\n"
                 + "***\n", Toast.LENGTH_LONG).show();
 
         Intent intent = new Intent(getApplicationContext(), AlarmReceiver.class);
