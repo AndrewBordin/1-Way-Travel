@@ -23,26 +23,41 @@ public class AlarmReceiver extends BroadcastReceiver {
     NotificationManager notificationManager;
     Notification myNotification;
 
-    private final String Url = "https://www.expedia.ca";
+    private final String UrlToronto = "https://www.expedia.ca/Hotel-Search?destination=Toronto%2C+" +
+            "Ontario%2C+Canada&latLong=43.648400%2C-79.382170&regionId=178314&startDate=&endDate=&rooms=" +
+            "1&_xpid=11905%7C1&adults=2";
+
+    private final String UrlLondon = "https://www.expedia.ca/Hotel-Search?destination=London%2C+" +
+            "England%2C+United+Kingdom&latLong=51.507538%2C-0.127804&regionId=178279&startDate=" +
+            "&endDate=&rooms=1&_xpid=11905%7C1&adults=2";
+
+    private final String UrlSydney = "https://www.expedia.ca/Hotel-Search?destination=Sydney%2C+New" +
+            "+South+Wales%2C+Australia&latLong=-33.867570%2C151.208440&regionId=178312&startDate=" +
+            "&endDate=&rooms=1&_xpid=11905%7C1&adults=2";
+
+    private final String UrlSanFrancisco = "https://www.expedia.ca/Hotel-Search?destination=" +
+            "San+Francisco%2C+California%2C+United+States+Of+America&latLong=37.787400%2C-122.408200" +
+            "&regionId=178305&startDate=&endDate=&rooms=1&_xpid=11905%7C1&adults=2";
 
     @Override
     public void onReceive(Context context, Intent arg1) {
 
-        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(Url));
-
-        PendingIntent pendingIntent = PendingIntent.getActivity(
-                context,
-                0,
-                myIntent,
-                PendingIntent.FLAG_UPDATE_CURRENT);
-
-        int arrayPosition = myIntent.getIntExtra("arrayPosition", 0);
+        int arrayPosition = arg1.getIntExtra("arrayPosition", 0);
 
         switch(arrayPosition) {
             case 0:
+
+                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(UrlToronto));
+
+                PendingIntent pendingIntent = PendingIntent.getActivity(
+                        context,
+                        0,
+                        myIntent,
+                        PendingIntent.FLAG_UPDATE_CURRENT);
+
                 myNotification = new NotificationCompat.Builder(context)
-                        .setContentTitle("Your vacation to Toronto is in a month!")
-                        .setContentText("Click here to book it at expedia.ca")
+                        .setContentTitle("REMINDER: vacation to Toronto is in a month!")
+                        .setContentText("Click here to book hotel and flight")
                         .setTicker("Notification!")
                         .setWhen(System.currentTimeMillis())
                         .setContentIntent(pendingIntent)
@@ -53,9 +68,18 @@ public class AlarmReceiver extends BroadcastReceiver {
                 break;
 
             case 1:
+
+                myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(UrlLondon));
+
+                pendingIntent = PendingIntent.getActivity(
+                        context,
+                        0,
+                        myIntent,
+                        PendingIntent.FLAG_UPDATE_CURRENT);
+
                 myNotification = new NotificationCompat.Builder(context)
-                        .setContentTitle("Your vacation to London is in a month!")
-                        .setContentText("Click here to book it at expedia.ca")
+                        .setContentTitle("REMINDER: vacation to London is in a month!")
+                        .setContentText("Click here to book hotel and flight")
                         .setTicker("Notification!")
                         .setWhen(System.currentTimeMillis())
                         .setContentIntent(pendingIntent)
@@ -66,9 +90,18 @@ public class AlarmReceiver extends BroadcastReceiver {
                 break;
 
             case 2:
+
+                myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(UrlSanFrancisco));
+
+                pendingIntent = PendingIntent.getActivity(
+                        context,
+                        0,
+                        myIntent,
+                        PendingIntent.FLAG_UPDATE_CURRENT);
+
                 myNotification = new NotificationCompat.Builder(context)
-                        .setContentTitle("Your vacation to San Francisco is in a month!")
-                        .setContentText("Click here to book it at expedia.ca")
+                        .setContentTitle("REMINDER: vacation to San Francisco is in a month!")
+                        .setContentText("Click here to book hotel and flight")
                         .setTicker("Notification!")
                         .setWhen(System.currentTimeMillis())
                         .setContentIntent(pendingIntent)
@@ -79,9 +112,18 @@ public class AlarmReceiver extends BroadcastReceiver {
                 break;
 
             case 3:
+
+                myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(UrlSydney));
+
+                pendingIntent = PendingIntent.getActivity(
+                        context,
+                        0,
+                        myIntent,
+                        PendingIntent.FLAG_UPDATE_CURRENT);
+
                 myNotification = new NotificationCompat.Builder(context)
-                        .setContentTitle("Your vacation to Sydney is in a month!")
-                        .setContentText("Click here to book it at expedia.ca")
+                        .setContentTitle("REMINDER: vacation to Sydney is in a month!")
+                        .setContentText("Click here to book hotel and flight")
                         .setTicker("Notification!")
                         .setWhen(System.currentTimeMillis())
                         .setContentIntent(pendingIntent)
