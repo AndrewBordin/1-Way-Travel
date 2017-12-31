@@ -58,10 +58,10 @@ public class CalendarActivity extends Activity {
                         datePicker.getMonth() - 1,
                         datePicker.getDayOfMonth(),
                         0,
-                        00,
+                        30,
                         00);
 
-                notification.set(Calendar.AM_PM, Calendar.PM);
+                notification.set(Calendar.AM_PM, Calendar.AM);
 
                 if (userPick.compareTo(current) <= 0){
                     //the date chosen is in the past
