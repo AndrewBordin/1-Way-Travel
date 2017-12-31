@@ -38,7 +38,8 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         myNotification = new NotificationCompat.Builder(context)
                 .setContentTitle("Vacation Time!")
-                .setContentText("https://www.expedia.ca/")
+                .setContentText("You have chosen to travel in exactly one month. Have you booked your vacation" +
+                        "at https://www.expedia.ca/ yet?")
                 .setTicker("Notification!")
                 .setWhen(System.currentTimeMillis())
                 .setContentIntent(pendingIntent)

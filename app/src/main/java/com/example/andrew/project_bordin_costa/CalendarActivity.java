@@ -46,18 +46,19 @@ public class CalendarActivity extends Activity {
 
                 Calendar cal = Calendar.getInstance();
                 cal.set(datePicker.getYear(),
-                        datePicker.getMonth(),
+                        datePicker.getMonth() - 1,
                         datePicker.getDayOfMonth(),
                         7,
-                        23,
-                        45);
+                        53,
+                        00);
 
                 cal.set(Calendar.AM_PM, Calendar.PM);
 
                 if(cal.compareTo(current) <= 0){
                     //The set Date/Time already passed
                     Toast.makeText(getApplicationContext(),
-                            "Invalid Date/Time",
+                            "Your vacation is in less than a month. Hurry up and book it" +
+                                    "on expedia.ca!",
                             Toast.LENGTH_LONG).show();
                 }else{
                     setAlarm(cal);
@@ -69,7 +70,7 @@ public class CalendarActivity extends Activity {
 
     private void setAlarm(Calendar targetCal){
         Toast.makeText(getApplicationContext(), "\n\n***\n"
-                + "Alarm is set@ " + targetCal.getTime() + "\n"
+                + "You will be notified a month before your vacation to book your tickets" + "\n"
                 + "***\n", Toast.LENGTH_LONG).show();
 
         Intent intent = new Intent(getBaseContext(), AlarmReceiver.class);
