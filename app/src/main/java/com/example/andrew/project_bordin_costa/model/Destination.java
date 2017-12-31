@@ -15,25 +15,30 @@ public class Destination implements Serializable {
 
     private String CityName;
 
+    private String CitySubheading;
+
     private int CityPicture;
 
-    public Destination(String cityName, int cityPicture){
+    public Destination(String cityName, int cityPicture, String citySubheading){
         this.CityPicture = cityPicture;
         this.CityName = cityName;
+        this.CitySubheading = citySubheading;
     }
 
     public String getCityName(){return CityName;}
 
     public int getCityPicture(){return CityPicture;}
 
+    public String getCitySubheading(){return CitySubheading;}
+
     public static ArrayList<Destination> getDestination(){
 
         ArrayList<Destination> destinations = new ArrayList<>();
 
-        destinations.add(new Destination("Toronto", R.drawable.toronto4));
-        destinations.add(new Destination("London", R.drawable.london2));
-        destinations.add(new Destination("San Fransisco", R.drawable.sanfran2));
-        destinations.add(new Destination("Sydney", R.drawable.sydney));
+        destinations.add(new Destination("Toronto", R.drawable.toronto4, "The Six."));
+        destinations.add(new Destination("London", R.drawable.london2, "Live. Love. London."));
+        destinations.add(new Destination("San Francisco", R.drawable.sanfran, "The Hardest Part is Leaving."));
+        destinations.add(new Destination("Sydney", R.drawable.sydney2, "Love Every Second."));
 
         return destinations;
     }

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -21,8 +22,10 @@ public class DestinationActivity extends Activity implements View.OnClickListene
     Button btnRestaurants;
     Button btnMap;
     Button btnEmergency;
+    FloatingActionButton fabDate;
     ImageView imageCity;
     TextView txtDestinationName;
+    TextView txtDestinationSubheading;
     private static final int THINGS_TO_DO_ACTIVITY = 3;
     private static final int RESTAURANT_ACTIVITY = 4;
     private static final int MAP_ACTIVITY = 5;
@@ -35,10 +38,13 @@ public class DestinationActivity extends Activity implements View.OnClickListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_destination);
-        btnDatePicker = findViewById(R.id.btnDateButton);
-        btnDatePicker.setOnClickListener(this);
+
+        fabDate = findViewById(R.id.fabDate);
+        fabDate.setOnClickListener(this);
 
         txtDestinationName = findViewById(R.id.txtDestName);
+
+        txtDestinationSubheading = findViewById(R.id.txtSubheading);
 
         imageCity = findViewById(R.id.imageCity);
 
@@ -64,7 +70,11 @@ public class DestinationActivity extends Activity implements View.OnClickListene
 
             String cityname = destinationArrayList.get(arrayPosition).getCityName();
 
+            String citySubheading = destinationArrayList.get(arrayPosition).getCitySubheading();
+
             txtDestinationName.setText(cityname);
+
+            txtDestinationSubheading.setText(citySubheading);
 
             imageCity.setImageResource(destinationArrayList.get(arrayPosition).getCityPicture());
         }
@@ -102,7 +112,7 @@ public class DestinationActivity extends Activity implements View.OnClickListene
                 startActivityForResult(intent, EMERGENCY_ACTIVITY);
                 break;
 
-            case R.id.btnDateButton:
+            case R.id.fabDate:
                 //code
                 intent = new Intent(getApplicationContext(),CalendarActivity.class);
                 intent.putExtra("arrayPosition", arrayPosition);
