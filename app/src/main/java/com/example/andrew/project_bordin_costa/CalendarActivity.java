@@ -44,24 +44,43 @@ public class CalendarActivity extends Activity {
 
                 Calendar current = Calendar.getInstance();
 
-                Calendar cal = Calendar.getInstance();
-                cal.set(datePicker.getYear(),
-                        datePicker.getMonth() - 1,
+                Calendar notification = Calendar.getInstance();
+                Calendar userPick = Calendar.getInstance();
+
+                userPick.set(datePicker.getYear(),
+                        datePicker.getMonth(),
                         datePicker.getDayOfMonth(),
-                        8,
-                        05,
+                        0,
+                        00,
                         00);
 
-                cal.set(Calendar.AM_PM, Calendar.PM);
+                notification.set(datePicker.getYear(),
+                        datePicker.getMonth() - 1,
+                        datePicker.getDayOfMonth(),
+                        9,
+                        15,
+                        00);
 
-                if(cal.compareTo(current) <= 0){
-                    //The set Date/Time already passed
+                notification.set(Calendar.AM_PM, Calendar.PM);
+
+                if (userPick.compareTo(current) <= 0){
+                    //the date chosen is in the past
                     Toast.makeText(getApplicationContext(),
-                            "Your vacation is in less than a month. Hurry up and book it " +
-                                    "on expedia.ca!",
+                            "Invalid Date. Date chosen has passed.",
                             Toast.LENGTH_LONG).show();
-                }else{
-                    setAlarm(cal);
+                }
+
+                else {
+
+                    if (notification.compareTo(current) <= 0) {
+                        //The date chosen is less than a month away
+                        Toast.makeText(getApplicationContext(),
+                                "Your vacation is in less than a month. Hurry up and book it " +
+                                        "on expedia.ca!",
+                                Toast.LENGTH_LONG).show();
+                    } else {
+                        setAlarm(notification);
+                    }
                 }
 
             }
@@ -73,8 +92,9 @@ public class CalendarActivity extends Activity {
                 + "You will be notified a month before your vacation to book your tickets" + "\n"
                 + "***\n", Toast.LENGTH_LONG).show();
 
-        Intent intent = new Intent(getBaseContext(), AlarmReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(getBaseContext(), RQS_1, intent, 0);
+        Intent intent = new Intent(getApplicationContext(), AlarmReceiver.class);
+        intent.putExtra("arrayPosition", arrayPosition);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), RQS_1, intent, 0);
         AlarmManager alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
         alarmManager.set(AlarmManager.RTC_WAKEUP, targetCal.getTimeInMillis(), pendingIntent);
     }

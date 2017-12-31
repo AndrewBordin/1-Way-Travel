@@ -34,18 +34,63 @@ public class AlarmReceiver extends BroadcastReceiver {
                 context,
                 0,
                 myIntent,
-                PendingIntent.FLAG_CANCEL_CURRENT);
+                PendingIntent.FLAG_UPDATE_CURRENT);
 
-        myNotification = new NotificationCompat.Builder(context)
-                .setContentTitle("Your vacation is in a month!")
-                .setContentText("Click here to book it at expedia.ca")
-                .setTicker("Notification!")
-                .setWhen(System.currentTimeMillis())
-                .setContentIntent(pendingIntent)
-                .setDefaults(Notification.DEFAULT_SOUND)
-                .setAutoCancel(true)
-                .setSmallIcon(R.drawable.common_google_signin_btn_icon_dark)
-                .build();
+        int arrayPosition = myIntent.getIntExtra("arrayPosition", 0);
+
+        switch(arrayPosition) {
+            case 0:
+                myNotification = new NotificationCompat.Builder(context)
+                        .setContentTitle("Your vacation to Toronto is in a month!")
+                        .setContentText("Click here to book it at expedia.ca")
+                        .setTicker("Notification!")
+                        .setWhen(System.currentTimeMillis())
+                        .setContentIntent(pendingIntent)
+                        .setDefaults(Notification.DEFAULT_SOUND)
+                        .setAutoCancel(true)
+                        .setSmallIcon(R.drawable.common_google_signin_btn_icon_dark)
+                        .build();
+                break;
+
+            case 1:
+                myNotification = new NotificationCompat.Builder(context)
+                        .setContentTitle("Your vacation to London is in a month!")
+                        .setContentText("Click here to book it at expedia.ca")
+                        .setTicker("Notification!")
+                        .setWhen(System.currentTimeMillis())
+                        .setContentIntent(pendingIntent)
+                        .setDefaults(Notification.DEFAULT_SOUND)
+                        .setAutoCancel(true)
+                        .setSmallIcon(R.drawable.common_google_signin_btn_icon_dark)
+                        .build();
+                break;
+
+            case 2:
+                myNotification = new NotificationCompat.Builder(context)
+                        .setContentTitle("Your vacation to San Francisco is in a month!")
+                        .setContentText("Click here to book it at expedia.ca")
+                        .setTicker("Notification!")
+                        .setWhen(System.currentTimeMillis())
+                        .setContentIntent(pendingIntent)
+                        .setDefaults(Notification.DEFAULT_SOUND)
+                        .setAutoCancel(true)
+                        .setSmallIcon(R.drawable.common_google_signin_btn_icon_dark)
+                        .build();
+                break;
+
+            case 3:
+                myNotification = new NotificationCompat.Builder(context)
+                        .setContentTitle("Your vacation to Sydney is in a month!")
+                        .setContentText("Click here to book it at expedia.ca")
+                        .setTicker("Notification!")
+                        .setWhen(System.currentTimeMillis())
+                        .setContentIntent(pendingIntent)
+                        .setDefaults(Notification.DEFAULT_SOUND)
+                        .setAutoCancel(true)
+                        .setSmallIcon(R.drawable.common_google_signin_btn_icon_dark)
+                        .build();
+                break;
+        }
 
         notificationManager =
                 (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
