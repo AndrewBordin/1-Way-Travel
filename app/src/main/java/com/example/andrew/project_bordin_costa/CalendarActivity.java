@@ -21,7 +21,8 @@ public class CalendarActivity extends Activity {
     Button btnSaveDate;
     DatePicker datePicker;
     final static int RQS_1 = 1;
-    int arrayPosition;
+    final static int RQS_2 = 2;
+    int arrayPosition = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +44,6 @@ public class CalendarActivity extends Activity {
             public void onClick(View view) {
 
                 Calendar current = Calendar.getInstance();
-
                 Calendar notification = Calendar.getInstance();
                 Calendar userPick = Calendar.getInstance();
 
@@ -57,11 +57,9 @@ public class CalendarActivity extends Activity {
                 notification.set(datePicker.getYear(),
                         datePicker.getMonth() - 1,
                         datePicker.getDayOfMonth(),
-                        0,
-                        57,
+                        12,
+                        00,
                         00);
-
-                notification.set(Calendar.AM_PM, Calendar.PM);
 
                 if (userPick.compareTo(current) <= 0){
                     //the date chosen is in the past
@@ -74,11 +72,10 @@ public class CalendarActivity extends Activity {
 
                     if (notification.compareTo(current) <= 0) {
                         //The date chosen is less than a month away
-                        Toast.makeText(getApplicationContext(),
-                                "Your vacation is in less than a month! Go book it NOW!",
-                                Toast.LENGTH_LONG).show();
+                        setAlarm(current, RQS_2);
                     } else {
-                        setAlarm(notification);
+                        //The data chosen is more than a month away
+                        setAlarm(notification, RQS_1);
                     }
                 }
 
@@ -86,16 +83,37 @@ public class CalendarActivity extends Activity {
         });
     }
 
-    private void setAlarm(Calendar targetCal){
-        Toast.makeText(getApplicationContext(), "\n\n***\n"
+    private void setAlarm(Calendar targetCal, int flag){
+
+        if (flag == RQS_1){
+            Toast.makeText(getApplicationContext(), "\n\n***\n"
                 + "You will be notified a month before your vacation to book hotels and flight" + "\n"
                 + "***\n", Toast.LENGTH_LONG).show();
 
-        Intent intent = new Intent(getApplicationContext(), AlarmReceiver.class);
-        intent.putExtra("arrayPosition", arrayPosition);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), RQS_1, intent, 0);
-        AlarmManager alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
-        alarmManager.set(AlarmManager.RTC_WAKEUP, targetCal.getTimeInMillis(), pendingIntent);
+            Intent intent = new Intent(getApplicationContext(), AlarmReceiver.class);
+            intent.putExtra("arrayPosition", arrayPosition);
+            intent.putExtra("notificationID", flag);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),
+                    RQS_1, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+            AlarmManager alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+            alarmManager.set(AlarmManager.RTC_WAKEUP, targetCal.getTimeInMillis(), pendingIntent);
+        }
+        else {
+            Toast.makeText(getApplicationContext(),
+                    "\n\n***\n" +
+                            "Your vacation is in less than a month! Click notification to go to expedia.ca"
+                            + "\n"
+                            + "***\n",
+                    Toast.LENGTH_LONG).show();
+
+            Intent intent = new Intent(getApplicationContext(), AlarmReceiver.class);
+            intent.putExtra("arrayPosition", arrayPosition);
+            intent.putExtra("notificationID", flag);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),
+                    RQS_2, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+            AlarmManager alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+            alarmManager.set(AlarmManager.RTC_WAKEUP, targetCal.getTimeInMillis(), pendingIntent);
+        }
     }
 
 

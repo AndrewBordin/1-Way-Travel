@@ -21,10 +21,30 @@ public class MainActivity extends Activity implements View.OnClickListener{
     ArrayList<Destination> destinations;
 
     private static final int DESTINATION_ACTIVITY = 2;
+    int currentDestination = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        btnToronto = findViewById(R.id.btnToronto);
+        btnToronto.setOnClickListener(this);
+
+        btnLondon = findViewById(R.id.btnLondon);
+        btnLondon.setOnClickListener(this);
+
+        btnSanFran = findViewById(R.id.btnSanFran);
+        btnSanFran.setOnClickListener(this);
+
+        btnSydney = findViewById(R.id.btnSydney);
+        btnSydney.setOnClickListener(this);
+
+        destinations = Destination.getDestination();
+    }
+    @Override
+    public void onRestart() {
+        super.onRestart();
         setContentView(R.layout.activity_main);
 
         btnToronto = findViewById(R.id.btnToronto);
@@ -46,7 +66,6 @@ public class MainActivity extends Activity implements View.OnClickListener{
     public void onClick(View view) {
 
         Intent intent = new Intent(getApplicationContext(),DestinationActivity.class);
-        int currentDestination = 0;
         intent.putExtra("data", destinations);
 
         switch(view.getId()){
@@ -54,25 +73,31 @@ public class MainActivity extends Activity implements View.OnClickListener{
             case R.id.btnToronto:
                 //code
                 currentDestination = 0;
+                intent.putExtra("arrayPosition", currentDestination);
+                startActivityForResult(intent, DESTINATION_ACTIVITY);
                 break;
 
             case R.id.btnLondon:
                 //code
                 currentDestination = 1;
+                intent.putExtra("arrayPosition", currentDestination);
+                startActivityForResult(intent, DESTINATION_ACTIVITY);
                 break;
 
             case R.id.btnSanFran:
                 //code
                 currentDestination = 2;
+                intent.putExtra("arrayPosition", currentDestination);
+                startActivityForResult(intent, DESTINATION_ACTIVITY);
                 break;
 
             case R.id.btnSydney:
                 //code
                 currentDestination = 3;
+                intent.putExtra("arrayPosition", currentDestination);
+                startActivityForResult(intent, DESTINATION_ACTIVITY);
                 break;
         }
-        intent.putExtra("arrayPosition", currentDestination);
-        startActivityForResult(intent, DESTINATION_ACTIVITY);
 
     }
 }

@@ -10,6 +10,8 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
@@ -42,101 +44,205 @@ public class AlarmReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent arg1) {
 
-        int arrayPosition = arg1.getIntExtra("arrayPosition", 0);
+        int arrayPosition = 0;
+        int notificationID = 1;
 
-        switch(arrayPosition) {
-            case 0:
+        arrayPosition = arg1.getIntExtra("arrayPosition", 0);
+        notificationID = arg1.getIntExtra("notificationID", 1);
 
-                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(UrlToronto));
+        if (notificationID == 1) {
+            switch (arrayPosition) {
+                case 0:
 
-                PendingIntent pendingIntent = PendingIntent.getActivity(
-                        context,
-                        0,
-                        myIntent,
-                        PendingIntent.FLAG_UPDATE_CURRENT);
+                    Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(UrlToronto));
 
-                myNotification = new NotificationCompat.Builder(context)
-                        .setContentTitle("REMINDER: vacation to Toronto is in a month!")
-                        .setContentText("Click here to book hotel and flight")
-                        .setTicker("Notification!")
-                        .setWhen(System.currentTimeMillis())
-                        .setContentIntent(pendingIntent)
-                        .setDefaults(Notification.DEFAULT_SOUND)
-                        .setAutoCancel(true)
-                        .setSmallIcon(R.drawable.common_google_signin_btn_icon_dark)
-                        .build();
-                break;
+                    PendingIntent pendingIntent = PendingIntent.getActivity(
+                            context,
+                            0,
+                            myIntent,
+                            PendingIntent.FLAG_UPDATE_CURRENT);
 
-            case 1:
+                    myNotification = new NotificationCompat.Builder(context)
+                            .setContentTitle("Vacation to Toronto is in a month!")
+                            .setContentText("Click here to book hotel and flight")
+                            .setTicker("Notification!")
+                            .setWhen(System.currentTimeMillis())
+                            .setContentIntent(pendingIntent)
+                            .setDefaults(Notification.DEFAULT_SOUND)
+                            .setAutoCancel(true)
+                            .setSmallIcon(R.drawable.airplaneicon)
+                            .setColor(Color.LTGRAY)
+                            .build();
+                    break;
 
-                myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(UrlLondon));
+                case 1:
 
-                pendingIntent = PendingIntent.getActivity(
-                        context,
-                        0,
-                        myIntent,
-                        PendingIntent.FLAG_UPDATE_CURRENT);
+                    myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(UrlLondon));
 
-                myNotification = new NotificationCompat.Builder(context)
-                        .setContentTitle("REMINDER: vacation to London is in a month!")
-                        .setContentText("Click here to book hotel and flight")
-                        .setTicker("Notification!")
-                        .setWhen(System.currentTimeMillis())
-                        .setContentIntent(pendingIntent)
-                        .setDefaults(Notification.DEFAULT_SOUND)
-                        .setAutoCancel(true)
-                        .setSmallIcon(R.drawable.common_google_signin_btn_icon_dark)
-                        .build();
-                break;
+                    pendingIntent = PendingIntent.getActivity(
+                            context,
+                            0,
+                            myIntent,
+                            PendingIntent.FLAG_UPDATE_CURRENT);
 
-            case 2:
+                    myNotification = new NotificationCompat.Builder(context)
+                            .setContentTitle("Vacation to London is in a month!")
+                            .setContentText("Click here to book hotel and flight")
+                            .setTicker("Notification!")
+                            .setWhen(System.currentTimeMillis())
+                            .setContentIntent(pendingIntent)
+                            .setDefaults(Notification.DEFAULT_SOUND)
+                            .setAutoCancel(true)
+                            .setSmallIcon(R.drawable.airplaneicon)
+                            .build();
+                    break;
 
-                myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(UrlSanFrancisco));
+                case 2:
 
-                pendingIntent = PendingIntent.getActivity(
-                        context,
-                        0,
-                        myIntent,
-                        PendingIntent.FLAG_UPDATE_CURRENT);
+                    myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(UrlSanFrancisco));
 
-                myNotification = new NotificationCompat.Builder(context)
-                        .setContentTitle("REMINDER: vacation to San Francisco is in a month!")
-                        .setContentText("Click here to book hotel and flight")
-                        .setTicker("Notification!")
-                        .setWhen(System.currentTimeMillis())
-                        .setContentIntent(pendingIntent)
-                        .setDefaults(Notification.DEFAULT_SOUND)
-                        .setAutoCancel(true)
-                        .setSmallIcon(R.drawable.common_google_signin_btn_icon_dark)
-                        .build();
-                break;
+                    pendingIntent = PendingIntent.getActivity(
+                            context,
+                            0,
+                            myIntent,
+                            PendingIntent.FLAG_UPDATE_CURRENT);
 
-            case 3:
+                    myNotification = new NotificationCompat.Builder(context)
+                            .setContentTitle("Vacation to San Francisco is in a month!")
+                            .setContentText("Click here to book hotel and flight")
+                            .setTicker("Notification!")
+                            .setWhen(System.currentTimeMillis())
+                            .setContentIntent(pendingIntent)
+                            .setDefaults(Notification.DEFAULT_SOUND)
+                            .setAutoCancel(true)
+                            .setSmallIcon(R.drawable.airplaneicon)
+                            .build();
+                    break;
 
-                myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(UrlSydney));
+                case 3:
 
-                pendingIntent = PendingIntent.getActivity(
-                        context,
-                        0,
-                        myIntent,
-                        PendingIntent.FLAG_UPDATE_CURRENT);
+                    myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(UrlSydney));
 
-                myNotification = new NotificationCompat.Builder(context)
-                        .setContentTitle("REMINDER: vacation to Sydney is in a month!")
-                        .setContentText("Click here to book hotel and flight")
-                        .setTicker("Notification!")
-                        .setWhen(System.currentTimeMillis())
-                        .setContentIntent(pendingIntent)
-                        .setDefaults(Notification.DEFAULT_SOUND)
-                        .setAutoCancel(true)
-                        .setSmallIcon(R.drawable.common_google_signin_btn_icon_dark)
-                        .build();
-                break;
+                    pendingIntent = PendingIntent.getActivity(
+                            context,
+                            0,
+                            myIntent,
+                            PendingIntent.FLAG_UPDATE_CURRENT);
+
+                    myNotification = new NotificationCompat.Builder(context)
+                            .setContentTitle("Vacation to Sydney is in a month!")
+                            .setContentText("Click here to book hotel and flight")
+                            .setTicker("Notification!")
+                            .setWhen(System.currentTimeMillis())
+                            .setContentIntent(pendingIntent)
+                            .setDefaults(Notification.DEFAULT_SOUND)
+                            .setAutoCancel(true)
+                            .setSmallIcon(R.drawable.airplaneicon)
+                            .build();
+                    break;
+            }
+
+            notificationManager =
+                    (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager.notify(MY_NOTIFICATION_ID, myNotification);
         }
 
-        notificationManager =
-                (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.notify(MY_NOTIFICATION_ID, myNotification);
+        else {
+            switch (arrayPosition) {
+                case 0:
+
+                    Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(UrlToronto));
+
+                    PendingIntent pendingIntent = PendingIntent.getActivity(
+                            context,
+                            0,
+                            myIntent,
+                            PendingIntent.FLAG_UPDATE_CURRENT);
+
+                    myNotification = new NotificationCompat.Builder(context)
+                            .setContentTitle("Vacation to Toronto is in less than a month!")
+                            .setContentText("Click here to book hotel and flight")
+                            .setTicker("Notification!")
+                            .setWhen(System.currentTimeMillis())
+                            .setContentIntent(pendingIntent)
+                            .setDefaults(Notification.DEFAULT_SOUND)
+                            .setAutoCancel(true)
+                            .setSmallIcon(R.drawable.airplaneicon)
+                            .setColor(Color.LTGRAY)
+                            .build();
+                    break;
+
+                case 1:
+
+                    myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(UrlLondon));
+
+                    pendingIntent = PendingIntent.getActivity(
+                            context,
+                            0,
+                            myIntent,
+                            PendingIntent.FLAG_UPDATE_CURRENT);
+
+                    myNotification = new NotificationCompat.Builder(context)
+                            .setContentTitle("Vacation to London is in less than a month!")
+                            .setContentText("Click here to book hotel and flight")
+                            .setTicker("Notification!")
+                            .setWhen(System.currentTimeMillis())
+                            .setContentIntent(pendingIntent)
+                            .setDefaults(Notification.DEFAULT_SOUND)
+                            .setAutoCancel(true)
+                            .setSmallIcon(R.drawable.airplaneicon)
+                            .build();
+                    break;
+
+                case 2:
+
+                    myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(UrlSanFrancisco));
+
+                    pendingIntent = PendingIntent.getActivity(
+                            context,
+                            0,
+                            myIntent,
+                            PendingIntent.FLAG_UPDATE_CURRENT);
+
+                    myNotification = new NotificationCompat.Builder(context)
+                            .setContentTitle("Vacation to San Francisco is in less than a month!")
+                            .setContentText("Click here to book hotel and flight")
+                            .setTicker("Notification!")
+                            .setWhen(System.currentTimeMillis())
+                            .setContentIntent(pendingIntent)
+                            .setDefaults(Notification.DEFAULT_SOUND)
+                            .setAutoCancel(true)
+                            .setSmallIcon(R.drawable.airplaneicon)
+                            .build();
+                    break;
+
+                case 3:
+
+                    myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(UrlSydney));
+
+                    pendingIntent = PendingIntent.getActivity(
+                            context,
+                            0,
+                            myIntent,
+                            PendingIntent.FLAG_UPDATE_CURRENT);
+
+                    myNotification = new NotificationCompat.Builder(context)
+                            .setContentTitle("Vacation to Sydney is in less than a month!")
+                            .setContentText("Click here to book hotel and flight")
+                            .setTicker("Notification!")
+                            .setWhen(System.currentTimeMillis())
+                            .setContentIntent(pendingIntent)
+                            .setDefaults(Notification.DEFAULT_SOUND)
+                            .setAutoCancel(true)
+                            .setSmallIcon(R.drawable.airplaneicon)
+                            .build();
+                    break;
+            }
+
+            notificationManager =
+                    (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager.notify(MY_NOTIFICATION_ID, myNotification);
+        }
 
     }
 
