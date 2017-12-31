@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">project_bordin_costa</string>
+    <string name="app_name">1-Way Travel</string>
     <string name="pick_a_date_msg">%1$s: Pick a Travel Date.</string>
     <string name="title_activity_map">Map</string>
 </resources>
