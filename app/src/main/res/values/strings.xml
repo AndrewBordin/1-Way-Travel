@@ -8,4 +8,8 @@
     <string name="san_fransisco">san fransisco</string>
     <string name="sydney">Sydney</string>
     <string name="toronto">Toronto</string>
+    <string name="things_to_do">Things to do</string>
+    <string name="restaurants">Restaurants</string>
+    <string name="name_of_the_destination">Name of the destination</string>
+    <string name="subheading">Subheading</string>
 </resources>
