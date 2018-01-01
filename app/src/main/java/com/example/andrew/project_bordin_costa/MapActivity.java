@@ -14,6 +14,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapActivity extends FragmentActivity implements OnMapReadyCallback {
 
+    //Declaring Variables
     private GoogleMap mMap;
     int arrayPosition;
 
@@ -41,17 +42,20 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+        //get the intent from the destination activity
         Intent intent = getIntent();
 
         if(intent != null){
             arrayPosition = intent.getIntExtra("arrayPosition", 0);
 
+            //set the marker to the destination that was sent in the intent.
             SetMarker(arrayPosition);
         }
 
     }
 
     private void SetMarker(int arrayPosition) {
+        //Set the height of the camera zoom. Can go up to 21
         float zoomLevel = 10.0f;
 
         switch (arrayPosition){
