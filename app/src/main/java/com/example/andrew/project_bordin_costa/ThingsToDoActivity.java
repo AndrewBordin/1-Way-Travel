@@ -168,7 +168,7 @@ public class ThingsToDoActivity extends Activity {
 
         switch (position){
             case TORONTO:
-                img1.setImageDrawable(getResources().getDrawable(R.drawable.toronto2));
+                img1.setImageDrawable(getResources().getDrawable(R.drawable.cntower));
                 img2.setImageDrawable(getResources().getDrawable(R.drawable.ripleys));
                 img3.setImageDrawable(getResources().getDrawable(R.drawable.eatoncentre));
                 break;
