@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
-import com.example.andrew.project_bordin_costa.model.Destination;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -17,6 +16,12 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
     //Declaring Variables
     private GoogleMap mMap;
     int arrayPosition;
+
+    //the arrayPosition of each city
+    final int TORONTO = 0;
+    final int LONDON = 1;
+    final int SANFRAN = 2;
+    final int SYDNEY = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,28 +64,28 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         float zoomLevel = 10.0f;
 
         switch (arrayPosition){
-            case 0:
+            case TORONTO:
                 // Add a marker in Toronto and move the camera
                 LatLng toronto = new LatLng(43.657477, -79.383648);
                 mMap.addMarker(new MarkerOptions().position(toronto).title("Marker in Toronto"));
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(toronto, zoomLevel));
                 break;
 
-            case 1:
+            case LONDON:
                 // Add a marker in London and move the camera
                 LatLng london = new LatLng(51.507400, -0.127955);
                 mMap.addMarker(new MarkerOptions().position(london).title("Marker in London"));
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(london, zoomLevel));
                 break;
 
-            case 2:
+            case SANFRAN:
                 // Add a marker in San Fransisco and move the camera
                 LatLng sanfran = new LatLng(37.775049,  -122.419521);
                 mMap.addMarker(new MarkerOptions().position(sanfran).title("Marker in San Fransisco"));
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sanfran, zoomLevel));
                 break;
 
-            case 3:
+            case SYDNEY:
                 // Add a marker in Sydney and move the camera
                 LatLng sydney = new LatLng(-33.868563, 151.208732);
                 mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));

@@ -2,7 +2,6 @@ package com.example.andrew.project_bordin_costa;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.view.View;
@@ -69,6 +68,7 @@ public class DestinationActivity extends Activity implements View.OnClickListene
         if(intent != null)
         {
             //Getting the arraylist from the intent
+            //Since we have complete control over the array, the warning can be disregarded
             destinationArrayList = (ArrayList<Destination>)intent.getSerializableExtra("data");
 
             //getting the arrayposition(Cityclicked) from the intent

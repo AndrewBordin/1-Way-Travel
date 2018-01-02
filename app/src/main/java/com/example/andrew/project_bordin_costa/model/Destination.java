@@ -14,7 +14,7 @@ public class Destination implements Serializable {
     private int CityPicture;
 
     //Destination constructor that takes the cities name, picture, and subheading
-    public Destination(String cityName, int cityPicture, String citySubheading){
+    private Destination(String cityName, int cityPicture, String citySubheading){
         this.CityPicture = cityPicture;
         this.CityName = cityName;
         this.CitySubheading = citySubheading;
@@ -27,18 +27,18 @@ public class Destination implements Serializable {
 
     public String getCitySubheading(){return CitySubheading;}
 
-    //Creating the arraylist of destinations and their info
+    //Creating the arrayList of destinations and their info
     public static ArrayList<Destination> getDestination(){
 
         ArrayList<Destination> destinations = new ArrayList<>();
 
-        //Adding each destination object to the destination arraylist
+        //Adding each destination object to the destination arrayList
         destinations.add(new Destination("Toronto", R.drawable.toronto4, "The Six."));
         destinations.add(new Destination("London", R.drawable.london2, "Live. Love. London."));
-        destinations.add(new Destination("San Francisco", R.drawable.sanfran, "The Hardest Part is Leaving."));
+        destinations.add(new Destination("San Francisco", R.drawable.sanfran4, "The Hardest Part is Leaving."));
         destinations.add(new Destination("Sydney", R.drawable.sydney2, "Love Every Second."));
 
-        //return the arraylist.
+        //return the arrayList
         return destinations;
     }
 
