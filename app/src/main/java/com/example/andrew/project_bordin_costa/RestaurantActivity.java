@@ -22,8 +22,12 @@ import static android.content.ContentValues.TAG;
 
 public class RestaurantActivity extends Activity {
 
+    //variable declarations
+
+    //variable which receives the city chosen
     int arrayPosition;
 
+    //UI variables for the first restaurant
     TextView txtRestaurant1;
     TextView txtFoodType1;
     TextView txtAddress1;
@@ -33,6 +37,7 @@ public class RestaurantActivity extends Activity {
     ImageView imgRestaurant1;
     Button btnWebsite1;
 
+    //variables for restaurant 1 which will receive the information from json
     String restaurant1TXT;
     String foodType1;
     String address1;
@@ -42,6 +47,7 @@ public class RestaurantActivity extends Activity {
     String website1;
     final int RESTAURANT_1 = 0;
 
+    //UI variables for the second restaurant
     TextView txtRestaurant2;
     TextView txtFoodType2;
     TextView txtAddress2;
@@ -51,7 +57,7 @@ public class RestaurantActivity extends Activity {
     ImageView imgRestaurant2;
     Button btnWebsite2;
 
-
+    //variables for restaurant 2 which will receive the information from json
     String restaurant2TXT;
     String foodType2;
     String address2;
@@ -61,11 +67,18 @@ public class RestaurantActivity extends Activity {
     String website2;
     final int RESTAURANT_2 = 1;
 
+    //the arrayPosition value for each city
+    final int TORONTO = 0;
+    final int LONDON = 1;
+    final int SANFRAN = 2;
+    final int SYDNEY = 3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant);
 
+        //Variable assignment
         txtRestaurant1 = findViewById(R.id.txt_restaurant1);
         txtFoodType1 = findViewById(R.id.txt_foodType1);
         txtAddress1 = findViewById(R.id.txt_address1);
@@ -104,6 +117,8 @@ public class RestaurantActivity extends Activity {
 
         Intent intent = getIntent();
 
+        //get the city chosen, load its info and the appropriate images to go along with the info
+        //then set the info to the UI variables
         if(intent != null){
             arrayPosition = intent.getIntExtra("arrayPosition", 0);
             loadInfo(arrayPosition);
@@ -111,6 +126,7 @@ public class RestaurantActivity extends Activity {
             setInfo();
         }
 
+        //on click listeners to open connection with the restaurants' websites
         btnWebsite1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -126,24 +142,32 @@ public class RestaurantActivity extends Activity {
         });
     }
 
+    //Method to get info from the json file in raw
     public void loadInfo(int position) {
         Resources res  = getResources();
 
+        //open the cities.json
         InputStream inputStream = res.openRawResource(R.raw.cities);
         Scanner scanner = new Scanner(inputStream);
 
+        //create the string builder that will hold the json's contents
         StringBuilder builder = new StringBuilder();
 
+        //scan every line and pass it to the builder
         while(scanner.hasNextLine())
         {
             builder.append(scanner.nextLine());
         }
 
         String jsonString = builder.toString();
+
+        //get the city object in the json from position (arrayPosition) user chose
         JSONObject city = getCity(jsonString, position);
 
         try {
+            //get the proper restaurants' array accordingly to the city chosen
             JSONArray restaurants = city.getJSONArray("restaurants");
+            //then get the restaurants' information
             getInfo(restaurants);
         } catch (JSONException e) {
             e.printStackTrace();
@@ -151,36 +175,38 @@ public class RestaurantActivity extends Activity {
 
     }
 
+    //method which will get the proper images from drawable accordingly to the city chosen
     private void loadImages(int position) {
         switch (position) {
-            case 0:
+            case TORONTO:
                 imgRestaurant1.setImageDrawable(getResources().getDrawable(R.drawable.carisma));
                 imgRestaurant2.setImageDrawable(getResources().getDrawable(R.drawable.alorestaurant));
                 break;
 
-            case 1:
+            case LONDON:
                 imgRestaurant1.setImageDrawable(getResources().getDrawable(R.drawable.theledbury));
                 imgRestaurant2.setImageDrawable(getResources().getDrawable(R.drawable.tangia));
                 break;
 
-            case 2:
+            case SANFRAN:
                 imgRestaurant1.setImageDrawable(getResources().getDrawable(R.drawable.latequeria));
                 imgRestaurant2.setImageDrawable(getResources().getDrawable(R.drawable.garydanko));
                 break;
 
-            case 3:
+            case SYDNEY:
                 imgRestaurant1.setImageDrawable(getResources().getDrawable(R.drawable.mamak));
                 imgRestaurant2.setImageDrawable(getResources().getDrawable(R.drawable.mrwong));
                 break;
         }
     }
 
+    //Method which gets the json array of all cities and gets the object of the one city the user
+    //chose
     private JSONObject getCity(String jsonString, int position) {
         try {
             JSONObject root = new JSONObject(jsonString);
             JSONArray cities = root.getJSONArray("cities");
-            JSONObject city = cities.getJSONObject(position);
-            return city;
+            return cities.getJSONObject(position);
 
         } catch (JSONException e) {
             Log.e(TAG, e.toString());
@@ -188,23 +214,29 @@ public class RestaurantActivity extends Activity {
         }
     }
 
+    //Get both restaurant objects and their information, assigning the info to the
+    //appropriate variable
     private void getInfo(JSONArray restaurants) {
         try {
             JSONObject restaurant1 = restaurants.getJSONObject(RESTAURANT_1);
             JSONObject restaurant2 = restaurants.getJSONObject(RESTAURANT_2);
 
             restaurant1TXT = restaurant1.getString("name");
-            foodType1 = "Food Type: " + restaurant1.getString("food-type");
+            foodType1 = String.format(getResources().getString(R.string.food_type),
+                            restaurant1.getString("food-type"));
             address1 = restaurant1.getString("address");
-            stars1 = "Stars: " + restaurant1.getString("stars");
+            stars1 = String.format(getResources().getString(R.string.stars),
+                    restaurant1.getString("stars"));
             review1 = restaurant1.getString("review");
             reviewBy1 = restaurant1.getString("review-by");
             website1 = restaurant1.getString("website");
 
             restaurant2TXT = restaurant2.getString("name");
-            foodType2 = "Food Type: " + restaurant2.getString("food-type");
+            foodType2 = String.format(getResources().getString(R.string.food_type),
+                    restaurant2.getString("food-type"));
             address2 = restaurant2.getString("address");
-            stars2 = "Stars: " + restaurant2.getString("stars");
+            stars2 = String.format(getResources().getString(R.string.stars),
+                    restaurant2.getString("stars"));
             review2 = restaurant2.getString("review");
             reviewBy2 = restaurant2.getString("review-by");
             website2 = restaurant2.getString("website");
@@ -214,6 +246,7 @@ public class RestaurantActivity extends Activity {
         }
     }
 
+    //set the restaurants' info to the appropriate UI variables
     private void setInfo() {
         txtRestaurant1.setText(restaurant1TXT);
         txtFoodType1.setText(foodType1);
@@ -230,7 +263,8 @@ public class RestaurantActivity extends Activity {
         txtReviewBy2.setText(reviewBy2);
     }
 
-    private void openURL(String website1) {
+    //open a network connection with the restaurants's website URL gotten from the json object
+    private void openURL(String website) {
 
         //Create a new intent
         Intent intent = new Intent();
@@ -239,7 +273,7 @@ public class RestaurantActivity extends Activity {
         intent.setAction(Intent.ACTION_VIEW);
 
         // set the data of the Intent to be the Uri represented by the String
-        intent.setData(Uri.parse(website1));
+        intent.setData(Uri.parse(website));
 
         // start activity that will handle Uri
         startActivity(intent);
