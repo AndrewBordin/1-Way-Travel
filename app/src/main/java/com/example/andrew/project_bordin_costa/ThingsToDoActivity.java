@@ -33,7 +33,7 @@ public class ThingsToDoActivity extends Activity {
     TextView txtTtdWebsite1;
     ImageView img1;
 
-    //variables which will receive the first thing to do information
+    //variables which receive the first thing to do information
     String name1;
     String description1;
     String address1;
@@ -46,7 +46,7 @@ public class ThingsToDoActivity extends Activity {
     TextView txtTtdWebsite2;
     ImageView img2;
 
-    //variables which will receive the second thing to do information
+    //variables which receive the second thing to do information
     String name2;
     String description2;
     String address2;
@@ -59,7 +59,7 @@ public class ThingsToDoActivity extends Activity {
     TextView txtTtdWebsite3;
     ImageView img3;
 
-    //variables which will receive the third thing to do information
+    //variables which receive the third thing to do information
     String name3;
     String description3;
     String address3;

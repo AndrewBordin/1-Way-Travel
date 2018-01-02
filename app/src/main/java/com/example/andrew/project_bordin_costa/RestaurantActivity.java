@@ -37,7 +37,7 @@ public class RestaurantActivity extends Activity {
     ImageView imgRestaurant1;
     Button btnWebsite1;
 
-    //variables for restaurant 1 which will receive the information from json
+    //variables for restaurant 1 which receive the information from json
     String restaurant1TXT;
     String foodType1;
     String address1;
@@ -59,7 +59,7 @@ public class RestaurantActivity extends Activity {
     ImageView imgRestaurant2;
     Button btnWebsite2;
 
-    //variables for restaurant 2 which will receive the information from json
+    //variables for restaurant 2 which receive the information from json
     String restaurant2TXT;
     String foodType2;
     String address2;
