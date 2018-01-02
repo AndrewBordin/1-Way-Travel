@@ -45,6 +45,8 @@ public class RestaurantActivity extends Activity {
     String review1;
     String reviewBy1;
     String website1;
+
+    //value of restaurant 1 in the restaurant array found in the json file
     final int RESTAURANT_1 = 0;
 
     //UI variables for the second restaurant
@@ -65,6 +67,8 @@ public class RestaurantActivity extends Activity {
     String review2;
     String reviewBy2;
     String website2;
+
+    //value of the restaurant 2 in the restaurant array found in the json file
     final int RESTAURANT_2 = 1;
 
     //the arrayPosition value for each city
@@ -115,9 +119,10 @@ public class RestaurantActivity extends Activity {
         website2 = "";
 
 
+        //get the intent
         Intent intent = getIntent();
 
-        //get the city chosen, load its info and the appropriate images to go along with the info
+        //from the intent get the city chosen, load its info and the appropriate images to go along with the info
         //then set the info to the UI variables
         if(intent != null){
             arrayPosition = intent.getIntExtra("arrayPosition", 0);
@@ -153,7 +158,7 @@ public class RestaurantActivity extends Activity {
         //create the string builder that will hold the json's contents
         StringBuilder builder = new StringBuilder();
 
-        //scan every line and pass it to the builder
+        //scan every line and append it to the builder
         while(scanner.hasNextLine())
         {
             builder.append(scanner.nextLine());
@@ -175,7 +180,8 @@ public class RestaurantActivity extends Activity {
 
     }
 
-    //method which will get the proper images from drawable accordingly to the city chosen
+    //method which will get the proper images of restaurants 1 and 2
+    //from drawable accordingly to the city chosen
     private void loadImages(int position) {
         switch (position) {
             case TORONTO:
@@ -215,7 +221,7 @@ public class RestaurantActivity extends Activity {
     }
 
     //Get both restaurant objects and their information, assigning the info to the
-    //appropriate variable
+    //appropriate variables
     private void getInfo(JSONArray restaurants) {
         try {
             JSONObject restaurant1 = restaurants.getJSONObject(RESTAURANT_1);

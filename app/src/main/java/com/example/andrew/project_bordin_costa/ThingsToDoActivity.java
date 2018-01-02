@@ -21,43 +21,57 @@ import static android.content.ContentValues.TAG;
 
 public class ThingsToDoActivity extends Activity {
 
+    //variable declarations
+
+    //variable which receives the city chosen
     int arrayPosition;
 
+    //UI variables for the first thing to do in the city
     TextView txtName1;
     TextView txtTtdDescription1;
     TextView txtTtdAddress1;
     TextView txtTtdWebsite1;
     ImageView img1;
 
+    //variables which will receive the first thing to do information
     String name1;
     String description1;
     String address1;
     String website1;
 
-
+    //UI variables for the second thing to do in the city
     TextView txtName2;
     TextView txtTtdDescription2;
     TextView txtTtdAddress2;
     TextView txtTtdWebsite2;
     ImageView img2;
 
+    //variables which will receive the second thing to do information
     String name2;
     String description2;
     String address2;
     String website2;
 
-
+    //UI variables for the first third to do in the city
     TextView txtName3;
     TextView txtTtdDescription3;
     TextView txtTtdAddress3;
     TextView txtTtdWebsite3;
     ImageView img3;
 
+    //variables which will receive the third thing to do information
     String name3;
     String description3;
     String address3;
     String website3;
 
+    //the arrayPosition value for each city
+    final int TORONTO = 0;
+    final int LONDON = 1;
+    final int SANFRAN = 2;
+    final int SYDNEY = 3;
+
+    //the value of the position in the thing to do array found in the json file
     final int THING_TO_DO_1 = 0;
     final int THING_TO_DO_2 = 1;
     final int THING_TO_DO_3 = 2;
@@ -67,6 +81,7 @@ public class ThingsToDoActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_things_to_do);
 
+        //Variable assignment
         txtName1 = findViewById(R.id.txt_name1);
         txtTtdDescription1 = findViewById(R.id.txt_ttd_description1);
         txtTtdAddress1 = findViewById(R.id.txt_ttd_address1);
@@ -100,8 +115,11 @@ public class ThingsToDoActivity extends Activity {
         address3 = "";
         website3 = "";
 
+        //get the intent
         Intent intent = getIntent();
 
+        //from the intent get the city chosen, load its info and the appropriate images to go along with the info
+        //then set the info to the UI variables
         if(intent != null){
             arrayPosition = intent.getIntExtra("arrayPosition", 0);
             loadInfo(arrayPosition);
@@ -111,24 +129,32 @@ public class ThingsToDoActivity extends Activity {
 
     }
 
+    //Method to get info from the json file in raw
     public void loadInfo(int position) {
         Resources res  = getResources();
 
+        //open the cities.json
         InputStream inputStream = res.openRawResource(R.raw.cities);
         Scanner scanner = new Scanner(inputStream);
 
+        //create the string builder that will hold the json's contents
         StringBuilder builder = new StringBuilder();
 
+        //scan every line and append it to the builder
         while(scanner.hasNextLine())
         {
             builder.append(scanner.nextLine());
         }
 
         String jsonString = builder.toString();
+
+        //get the city object in the json from position (arrayPosition) user chose
         JSONObject city = getCity(jsonString, position);
 
         try {
+            //get the proper things to do's array accordingly to the city chosen
             JSONArray thingsToDo = city.getJSONArray("things-to-do");
+            //then get the things to do information
             getInfo(thingsToDo);
         } catch (JSONException e) {
             e.printStackTrace();
@@ -136,28 +162,30 @@ public class ThingsToDoActivity extends Activity {
 
     }
 
+    //method which will get the proper images of thing to do 1, 2 and 3
+    //from drawable accordingly to the city chosen
     private void loadImages(int position) {
 
         switch (position){
-            case 0:
+            case TORONTO:
                 img1.setImageDrawable(getResources().getDrawable(R.drawable.toronto2));
                 img2.setImageDrawable(getResources().getDrawable(R.drawable.ripleys));
                 img3.setImageDrawable(getResources().getDrawable(R.drawable.eatoncentre));
                 break;
 
-            case 1:
+            case LONDON:
                 img1.setImageDrawable(getResources().getDrawable(R.drawable.londoneye));
                 img2.setImageDrawable(getResources().getDrawable(R.drawable.bigben));
                 img3.setImageDrawable(getResources().getDrawable(R.drawable.buckinghampalace));
                 break;
 
-            case 2:
+            case SANFRAN:
                 img1.setImageDrawable(getResources().getDrawable(R.drawable.goldengate));
                 img2.setImageDrawable(getResources().getDrawable(R.drawable.pier39));
                 img3.setImageDrawable(getResources().getDrawable(R.drawable.coittower));
                 break;
 
-            case 3:
+            case SYDNEY:
                 img1.setImageDrawable(getResources().getDrawable(R.drawable.operahouse));
                 img2.setImageDrawable(getResources().getDrawable(R.drawable.harbourbridge));
                 img3.setImageDrawable(getResources().getDrawable(R.drawable.tarongazoo));
@@ -167,12 +195,13 @@ public class ThingsToDoActivity extends Activity {
 
     }
 
+    //Method which gets the json array of all cities and gets the object of the one city the user
+    //chose
     private JSONObject getCity(String jsonString, int position) {
         try {
             JSONObject root = new JSONObject(jsonString);
             JSONArray cities = root.getJSONArray("cities");
-            JSONObject city = cities.getJSONObject(position);
-            return city;
+            return cities.getJSONObject(position);
 
         } catch (JSONException e) {
             Log.e(TAG, e.toString());
@@ -180,6 +209,8 @@ public class ThingsToDoActivity extends Activity {
         }
     }
 
+    //Get thing to do 1, 2 and 3 objects and their information, assigning the info to the
+    //appropriate variables
     private void getInfo(JSONArray thingsToDo) {
         try {
 
@@ -207,30 +238,34 @@ public class ThingsToDoActivity extends Activity {
         }
     }
 
+    //set the things to do info to the appropriate UI variables
     private void setInfo() {
         txtName1.setText(name1);
         txtTtdDescription1.setText(description1);
         txtTtdAddress1.setText(address1);
-        txtTtdWebsite1.setClickable(true);
-        txtTtdWebsite1.setMovementMethod(LinkMovementMethod.getInstance());
-        String text = website1;
-        txtTtdWebsite1.setText(Html.fromHtml(text));
 
         txtName2.setText(name2);
         txtTtdDescription2.setText(description2);
         txtTtdAddress2.setText(address2);
-        txtTtdWebsite2.setClickable(true);
-        txtTtdWebsite2.setMovementMethod(LinkMovementMethod.getInstance());
-        String text2 = website2;
-        txtTtdWebsite2.setText(Html.fromHtml(text2));
 
         txtName3.setText(name3);
         txtTtdDescription3.setText(description3);
         txtTtdAddress3.setText(address3);
+
+        //Set all the websites' text in the UI to clickable
+        //making it a hyperlink which will open the link in the browser
+        txtTtdWebsite1.setClickable(true);
+        txtTtdWebsite1.setMovementMethod(LinkMovementMethod.getInstance());
+        txtTtdWebsite1.setText(Html.fromHtml(website1));
+
+        txtTtdWebsite2.setClickable(true);
+        txtTtdWebsite2.setMovementMethod(LinkMovementMethod.getInstance());
+        txtTtdWebsite2.setText(Html.fromHtml(website2));
+
         txtTtdWebsite3.setClickable(true);
         txtTtdWebsite3.setMovementMethod(LinkMovementMethod.getInstance());
-        String text3 = website3;
-        txtTtdWebsite3.setText(Html.fromHtml(text3));
+        txtTtdWebsite3.setText(Html.fromHtml(website3));
+
 
     }
 }
