@@ -45,29 +45,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
         btnSydney = findViewById(R.id.btnSydney);
         btnSydney.setOnClickListener(this);
 
-        //Calling the getdestination method from the Destination POJO which creates an array with
+        //Calling the getDestination method from the Destination POJO which creates an array with
         //all of the destinations and information associated with them
-        destinations = Destination.getDestination();
-    }
-
-    //TODO:COMMENT THIS
-    @Override
-    public void onRestart() {
-        super.onRestart();
-        setContentView(R.layout.activity_main);
-
-        btnToronto = findViewById(R.id.btnToronto);
-        btnToronto.setOnClickListener(this);
-
-        btnLondon = findViewById(R.id.btnLondon);
-        btnLondon.setOnClickListener(this);
-
-        btnSanFran = findViewById(R.id.btnSanFran);
-        btnSanFran.setOnClickListener(this);
-
-        btnSydney = findViewById(R.id.btnSydney);
-        btnSydney.setOnClickListener(this);
-
         destinations = Destination.getDestination();
     }
 
@@ -111,7 +90,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
             default:
                 //If no choice is made but the onclick still runs, launch a toast to the user.
-                Toast.makeText(getApplicationContext(), "Error: No destination chosen.", Toast.LENGTH_LONG);
+                Toast.makeText(getApplicationContext(), "Error: No destination chosen.", Toast.LENGTH_LONG).show();
         }
 
     }
