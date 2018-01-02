@@ -14,4 +14,7 @@
     <string name="subheading">Subheading</string>
     <string name="food_type">Food Type: %1$s</string>
     <string name="stars">Stars: %1$s</string>
+    <string name="invalid_date_toaster">Invalid Date. Date chosen is not in the future.</string>
+    <string name="toast_vacation_less_than_a_month">Your vacation is in less than a month! Click notification to go to expedia.ca</string>
+    <string name="toast_vacation_more_than_a_month">You will be notified a month before your vacation to book hotels and flight</string>
 </resources>
