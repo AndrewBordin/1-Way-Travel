@@ -21,6 +21,8 @@ import java.util.Scanner;
 
 import static android.content.ContentValues.TAG;
 
+//code snippet on line 76 from
+//https://stackoverflow.com/questions/32654580/android-studio-calling-button
 public class EmergencyActivity extends Activity {
 
     //variable declarations
