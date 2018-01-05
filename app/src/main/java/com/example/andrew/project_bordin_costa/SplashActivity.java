@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+
+//splash activity learned from https://medium.com/@ssaurel/create-a-splash-screen-on-android-the-right-way-93d6fb444857
 public class SplashActivity extends Activity {
 
     @Override

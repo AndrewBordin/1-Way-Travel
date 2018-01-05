@@ -15,6 +15,8 @@ import com.example.andrew.project_bordin_costa.model.AlarmReceiver;
 
 import java.util.Calendar;
 
+//note: alarm setting and date picker code snippets from
+//http://android-er.blogspot.ca/2013/06/set-alarm-on-specified-datetime-with.html
 public class CalendarActivity extends Activity {
 
     //variable declarations
