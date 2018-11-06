@@ -7,3 +7,4 @@ Users can also set a desired travel date where they will get notified on the dat
 book for that location on expedia.
 
 ![image](https://user-images.githubusercontent.com/25186337/48091203-02715480-e1d7-11e8-87d3-e6641276745b.png)
+![image](https://user-images.githubusercontent.com/25186337/48091273-3b112e00-e1d7-11e8-8127-3e57fb8dabcf.png)
